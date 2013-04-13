@@ -11,7 +11,9 @@
 @interface StackerRow : UIView
 
 @property (nonatomic) uint8_t rowInfo;
+@property (nonatomic, readonly) int initialCount;
 
-- (id) initWithRowInfo:(uint8_t)rowInfo;
+- (id) initWithCount:(int)count;
+- (void) cycle;
 
 @end

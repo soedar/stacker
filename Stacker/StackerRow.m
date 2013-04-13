@@ -12,10 +12,19 @@
 #define ROW_SIZE        7
 #define BOX_MARGIN_X    2
 
+#define DIRECTION_LEFT  -1
+#define DIRECTION_RIGHT 1
+
 @interface StackerRow ()
 
 @property (nonatomic, strong) NSArray *stackerBoxes;
+@property (nonatomic) int degreeOfFreedom;
 
+@property (nonatomic) int position;
+@property (nonatomic) int direction;
+
+
+@property (nonatomic) uint8_t initialRowInfo;
 @end
 
 @implementation StackerRow
@@ -29,16 +38,38 @@
     return self;
 }
 
-- (id) initWithRowInfo:(uint8_t)rowInfo
+- (id) initWithCount:(int)count
 {
     CGRect frame = CGRectMake(0, 0, ROW_SIZE*30, 30);
     self = [self initWithFrame:frame];
     if (self) {
         [self setupBoxes];
+        _initialCount = count;
         
-        self.rowInfo = rowInfo;
+        self.degreeOfFreedom = ROW_SIZE - count;
+        self.position = 0;
+        self.direction = DIRECTION_LEFT;
+        
+        self.rowInfo = self.initialRowInfo;
     }
     return self;
+}
+
+- (void) setInitialCount:(int)initialCount
+{
+    _initialCount = initialCount;
+}
+
+- (uint8_t) initialRowInfo
+{
+    if (_initialRowInfo == 0) {
+        uint8_t rowInfo = 0;
+        for (int i=0;i<self.initialCount;i++) {
+            rowInfo |= (1 << i);
+        }
+        _initialRowInfo = rowInfo;
+    }
+    return _initialRowInfo;
 }
 
 
@@ -72,6 +103,23 @@
         
         box.isActive = isActive;
     }
+}
+
+- (void) cycle {
+    // Can't move at all
+    if (self.degreeOfFreedom == 0) {
+        return;
+    }
+    
+    if (self.position+1 > self.degreeOfFreedom) {
+        self.direction = DIRECTION_LEFT;
+    }
+    if (self.position-1 < 0) {
+        self.direction = DIRECTION_RIGHT;
+    }
+    
+    self.position += self.direction;
+    self.rowInfo = self.initialRowInfo << self.position;
 }
 
 @end

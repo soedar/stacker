@@ -11,7 +11,7 @@
 #import "StackerRow.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) StackerRow *row;
 @end
 
 @implementation ViewController
@@ -21,14 +21,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    StackerRow *row = [[StackerRow alloc] initWithRowInfo:0];
-    [self.view addSubview:row];
+    self.row = [[StackerRow alloc] initWithCount:4];
+    [self.view addSubview:self.row];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)cycleRow:(id)sender
+{
+    [self.row cycle];
 }
 
 @end
