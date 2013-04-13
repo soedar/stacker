@@ -47,7 +47,7 @@
     
     CGFloat yOffset = 0;
     for (int i=0;i<self.rows;i++) {
-        StackerRow *row = [[StackerRow alloc] initWithHighlightCount:3 cycleTime:0.3];
+        StackerRow *row = [[StackerRow alloc] initWithDefaultHighlightCount:3 cycleTime:0.3];
         [stackerRows addObject:row];
         [self addSubview:row];
         
@@ -74,7 +74,7 @@
 
 - (void) start
 {
-    self.currentRow.isActive = YES;
+    [self.currentRow activateWithHighlightCount:3];
     self.mainTimer = [self timerForRow:self.currentRow];
 }
 
@@ -90,9 +90,10 @@
     if (self.previousRow) {
         self.currentRow.rowInfo &= self.previousRow.rowInfo;
     }
+    int highlightCount = [self.currentRow deactivateWithFinalHighlightCount];
     
     self.activeRowId++;
-    self.currentRow.isActive = YES;
+    [self.currentRow activateWithHighlightCount:highlightCount];
     
     self.mainTimer = [self timerForRow:self.currentRow];
 }

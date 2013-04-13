@@ -18,16 +18,27 @@
 @interface StackerRow ()
 
 @property (nonatomic, strong) NSArray *stackerBoxes;
-@property (nonatomic) int degreeOfFreedom;
 
 @property (nonatomic) int position;
 @property (nonatomic) int direction;
 
-
 @property (nonatomic) uint8_t initialRowInfo;
+@property (nonatomic) int highlightCount;
+
 @end
 
 @implementation StackerRow
+
+#pragma mark - Class method
++ (uint8_t) initialRowInfoForHighlightedCount:(int)highlightedCount
+{
+    uint8_t rowInfo = 0;
+    for (int i=0;i<highlightedCount;i++) {
+        rowInfo |= (1 << i);
+    }
+    
+    return rowInfo;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -38,34 +49,19 @@
     return self;
 }
 
-- (id) initWithHighlightCount:(int)count cycleTime:(CGFloat)cycleTime;
+- (id) initWithDefaultHighlightCount:(int)defaultCount cycleTime:(CGFloat)cycleTime
 {
     CGRect frame = CGRectMake(0, 0, ROW_SIZE*30, 30);
     self = [self initWithFrame:frame];
     if (self) {
         [self setupBoxes];
+        _defaultHighlightCount = defaultCount;
         _cycleTime = cycleTime;
-        _initialHighlightCount = count;
-        
-        self.degreeOfFreedom = ROW_SIZE - count;
         self.position = 0;
         self.direction = DIRECTION_RIGHT;
     }
     return self;
 }
-
-- (uint8_t) initialRowInfo
-{
-    if (_initialRowInfo == 0) {
-        uint8_t rowInfo = 0;
-        for (int i=0;i<self.initialHighlightCount;i++) {
-            rowInfo |= (1 << i);
-        }
-        _initialRowInfo = rowInfo;
-    }
-    return _initialRowInfo;
-}
-
 
 - (void) setupBoxes
 {
@@ -99,19 +95,32 @@
     }
 }
 
-- (void) setIsActive:(BOOL)isActive
+- (void) activateWithHighlightCount:(int)highlightCount
 {
-    _isActive = isActive;
-    self.rowInfo = (isActive) ? self.initialRowInfo : 0;
+    self.rowInfo = [StackerRow initialRowInfoForHighlightedCount:highlightCount];
+    self.initialRowInfo = self.rowInfo;
+    self.highlightCount = highlightCount;
+}
+
+- (int) deactivateWithFinalHighlightCount
+{
+    int count = 0;
+    for (int i=0;i<7;i++) {
+        if (self.rowInfo & (1 <<i)) {
+            count++;
+        }
+    }
+    return count;
 }
 
 - (void) cycle {
+    int degreeOfFreedom = ROW_SIZE - self.highlightCount;
     // Can't move at all if its not active or if all the light is maxed
-    if (self.degreeOfFreedom == 0) {
+    if (degreeOfFreedom == 0) {
         return;
     }
     
-    if (self.position+1 > self.degreeOfFreedom) {
+    if (self.position+1 > degreeOfFreedom) {
         self.direction = DIRECTION_LEFT;
     }
     if (self.position-1 < 0) {
