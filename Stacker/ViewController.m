@@ -26,11 +26,7 @@
     [self.view addSubview:self.row];
      */
     
-    self.stackerView = [[StackerView alloc] initWithRows:6];
-    self.stackerView.delegate = self;
-    [self.view addSubview:self.stackerView];
-    
-    [self.stackerView start];
+    [self initStackerView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,9 +35,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)cycleRow:(id)sender
+- (IBAction)stopRow:(id)sender
 {
     [self.stackerView moveToNextRow];
+}
+- (IBAction)reset:(id)sender
+{
+    [self.stackerView removeFromSuperview];
+    [self initStackerView];
+}
+
+- (void) initStackerView
+{
+    self.stackerView = [[StackerView alloc] initWithRows:8];
+    self.stackerView.delegate = self;
+    [self.view addSubview:self.stackerView];
+    
+    [self.stackerView start];
 }
 
 
@@ -49,7 +59,13 @@
 
 - (void) stackerView:(StackerView *)stackerView gameOverWithLastCompletedRow:(int)row
 {
-    NSLog(@"Last completed row: %i", row);
+    NSString *message = @"Not good enough!";
+    if (row == 8) {
+        message = @"Ok good job!";
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alertView show];
 }
 
 @end

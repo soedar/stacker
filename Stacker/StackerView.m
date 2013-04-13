@@ -38,7 +38,7 @@
     
     CGFloat yOffset = 0;
     for (int i=0;i<self.rows;i++) {
-        StackerRow *row = [[StackerRow alloc] initWithDefaultHighlightCount:3 cycleTime:0.05*(i+1)];
+        StackerRow *row = [[StackerRow alloc] initWithDefaultHighlightCount:3 cycleTime:0.03*(i+1)];
         [stackerRows addObject:row];
         [self addSubview:row];
         
