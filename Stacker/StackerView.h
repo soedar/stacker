@@ -12,4 +12,7 @@
 
 - (id) initWithRows:(int)rows;
 
+- (void) start;
+- (void) moveToNextRow;
+
 @end

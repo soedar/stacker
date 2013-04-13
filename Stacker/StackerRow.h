@@ -10,11 +10,13 @@
 
 @interface StackerRow : UIView
 
+@property (nonatomic, readonly) int initialHighlightCount;
+@property (nonatomic, readonly) CGFloat cycleTime;
+
 @property (nonatomic) uint8_t rowInfo;
-@property (nonatomic, readonly) int initialCount;
 @property (nonatomic) BOOL isActive;
 
-- (id) initWithCount:(int)count;
+- (id) initWithHighlightCount:(int)count cycleTime:(CGFloat)cycleTime;
 - (void) cycle;
 
 @end

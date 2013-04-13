@@ -14,11 +14,11 @@
 @interface StackerView ()
 
 @property (nonatomic) int rows;
-@property (nonatomic) int activeRow;
+@property (nonatomic) int activeRowId;
 @property (nonatomic, strong) NSArray *stackerRows;
+@property (nonatomic, strong) NSTimer *mainTimer;
 
 @end
-
 @implementation StackerView
 
 - (id)initWithFrame:(CGRect)frame
@@ -37,7 +37,6 @@
     if (self) {
         self.rows = rows;
         [self setupStackerRows];
-        [self activateRow:0];
     }
     return self;
 }
@@ -48,7 +47,7 @@
     
     CGFloat yOffset = 0;
     for (int i=0;i<self.rows;i++) {
-        StackerRow *row = [[StackerRow alloc] initWithCount:3];
+        StackerRow *row = [[StackerRow alloc] initWithHighlightCount:3 cycleTime:0.3];
         [stackerRows addObject:row];
         [self addSubview:row];
         
@@ -62,14 +61,45 @@
     self.stackerRows = [[stackerRows reverseObjectEnumerator] allObjects];
 }
 
-- (void) activateRow:(int)row
+- (StackerRow*) currentRow
 {
-    StackerRow *stackerRow = self.stackerRows[self.activeRow];
-    stackerRow.isActive = NO;
+    return self.stackerRows[self.activeRowId];
+}
+- (StackerRow*) previousRow
+{
+    return (self.activeRowId > 0) ? self.stackerRows[self.activeRowId-1] : nil;
+}
+
+#pragma mark - Stacker Controls
+
+- (void) start
+{
+    self.currentRow.isActive = YES;
+    self.mainTimer = [self timerForRow:self.currentRow];
+}
+
+- (void) cycle:(NSTimer*)timer
+{
+    [self.currentRow cycle];
+}
+
+- (void) moveToNextRow
+{
+    [self.mainTimer invalidate];
     
-    self.activeRow = row;
-    stackerRow = self.stackerRows[self.activeRow];
-    stackerRow.isActive = YES;
+    if (self.previousRow) {
+        self.currentRow.rowInfo &= self.previousRow.rowInfo;
+    }
+    
+    self.activeRowId++;
+    self.currentRow.isActive = YES;
+    
+    self.mainTimer = [self timerForRow:self.currentRow];
+}
+
+- (NSTimer*) timerForRow:(StackerRow *)row
+{
+    return [NSTimer scheduledTimerWithTimeInterval:row.cycleTime target:self selector:@selector(cycle:) userInfo:nil repeats:YES];
 }
 
 @end

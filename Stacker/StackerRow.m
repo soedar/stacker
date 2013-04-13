@@ -38,19 +38,18 @@
     return self;
 }
 
-- (id) initWithCount:(int)count
+- (id) initWithHighlightCount:(int)count cycleTime:(CGFloat)cycleTime;
 {
     CGRect frame = CGRectMake(0, 0, ROW_SIZE*30, 30);
     self = [self initWithFrame:frame];
     if (self) {
         [self setupBoxes];
-        _initialCount = count;
+        _cycleTime = cycleTime;
+        _initialHighlightCount = count;
         
         self.degreeOfFreedom = ROW_SIZE - count;
         self.position = 0;
         self.direction = DIRECTION_RIGHT;
-        
-        self.isActive = NO;
     }
     return self;
 }
@@ -59,7 +58,7 @@
 {
     if (_initialRowInfo == 0) {
         uint8_t rowInfo = 0;
-        for (int i=0;i<self.initialCount;i++) {
+        for (int i=0;i<self.initialHighlightCount;i++) {
             rowInfo |= (1 << i);
         }
         _initialRowInfo = rowInfo;
@@ -100,13 +99,15 @@
     }
 }
 
-- (void) setIsActive:(BOOL)isActive {
+- (void) setIsActive:(BOOL)isActive
+{
+    _isActive = isActive;
     self.rowInfo = (isActive) ? self.initialRowInfo : 0;
 }
 
 - (void) cycle {
     // Can't move at all if its not active or if all the light is maxed
-    if (self.degreeOfFreedom == 0 || !self.isActive) {
+    if (self.degreeOfFreedom == 0) {
         return;
     }
     

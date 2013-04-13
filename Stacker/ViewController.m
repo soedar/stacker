@@ -8,10 +8,10 @@
 
 #import "ViewController.h"
 #import "StackerView.h"
-#import "StackerRow.h"
 
 @interface ViewController ()
-@property (nonatomic, strong) StackerRow *row;
+@property (nonatomic, strong) StackerView *stackerView;
+
 @end
 
 @implementation ViewController
@@ -26,8 +26,10 @@
     [self.view addSubview:self.row];
      */
     
-    StackerView *stacker = [[StackerView alloc] initWithRows:4];
-    [self.view addSubview:stacker];
+    self.stackerView = [[StackerView alloc] initWithRows:4];
+    [self.view addSubview:self.stackerView];
+    
+    [self.stackerView start];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,7 +40,7 @@
 
 - (IBAction)cycleRow:(id)sender
 {
-    [self.row cycle];
+    [self.stackerView moveToNextRow];
 }
 
 @end
