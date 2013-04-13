@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "StackerView.h"
 
-@interface ViewController ()
+@interface ViewController () <StackerViewDelegate>
 @property (nonatomic, strong) StackerView *stackerView;
 
 @end
@@ -27,6 +27,7 @@
      */
     
     self.stackerView = [[StackerView alloc] initWithRows:4];
+    self.stackerView.delegate = self;
     [self.view addSubview:self.stackerView];
     
     [self.stackerView start];
@@ -41,6 +42,14 @@
 - (IBAction)cycleRow:(id)sender
 {
     [self.stackerView moveToNextRow];
+}
+
+
+#pragma mark - Delegate method
+
+- (void) stackerView:(StackerView *)stackerView gameOverWithLastCompletedRow:(int)row
+{
+    NSLog(@"Last completed row: %i", row);
 }
 
 @end

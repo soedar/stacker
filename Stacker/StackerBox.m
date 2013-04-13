@@ -36,7 +36,6 @@
     if (self) {
         self.highlightColor = highlightColor;
         self.passiveColor = [UIColor lightGrayColor];
-        self.passiveColor = [UIColor colorWithWhite:1.0 alpha:0.3];
         
         [self setupBoxView];
     }

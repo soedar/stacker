@@ -86,11 +86,24 @@
         self.currentRow.rowInfo &= self.previousRow.rowInfo;
     }
     int highlightCount = [self.currentRow deactivateWithFinalHighlightCount];
+   
+    if (highlightCount > 0 && self.activeRowId+1 < self.rows) {
+        self.activeRowId++;
+        [self.currentRow activateWithHighlightCount:highlightCount];
     
-    self.activeRowId++;
-    [self.currentRow activateWithHighlightCount:highlightCount];
+        self.mainTimer = [self timerForRow:self.currentRow];
+    }
     
-    self.mainTimer = [self timerForRow:self.currentRow];
+    else {
+        if ([self.delegate respondsToSelector:@selector(stackerView:gameOverWithLastCompletedRow:)]) {
+            if (highlightCount > 0) {
+                [self.delegate stackerView:self gameOverWithLastCompletedRow:self.activeRowId];
+            }
+            else {
+                [self.delegate stackerView:self gameOverWithLastCompletedRow:self.activeRowId-1];
+            }
+        }
+    }
 }
 
 - (NSTimer*) timerForRow:(StackerRow *)row

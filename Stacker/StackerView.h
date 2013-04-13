@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class StackerView;
+
+@protocol StackerViewDelegate <NSObject>
+
+- (void)stackerView:(StackerView*)stackerView gameOverWithLastCompletedRow:(int)row;
+
+@end
+
 @interface StackerView : UIView
+
+@property (nonatomic, assign) id<StackerViewDelegate> delegate;
 
 - (id) initWithRows:(int)rows;
 
