@@ -21,7 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.row = [[StackerRow alloc] initWithCount:4];
+    self.row = [[StackerRow alloc] initWithCount:1];
     [self.view addSubview:self.row];
 }
 

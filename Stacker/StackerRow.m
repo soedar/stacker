@@ -48,16 +48,11 @@
         
         self.degreeOfFreedom = ROW_SIZE - count;
         self.position = 0;
-        self.direction = DIRECTION_LEFT;
+        self.direction = DIRECTION_RIGHT;
         
         self.rowInfo = self.initialRowInfo;
     }
     return self;
-}
-
-- (void) setInitialCount:(int)initialCount
-{
-    _initialCount = initialCount;
 }
 
 - (uint8_t) initialRowInfo
