@@ -26,7 +26,7 @@
     [self.view addSubview:self.row];
      */
     
-    self.stackerView = [[StackerView alloc] initWithRows:4];
+    self.stackerView = [[StackerView alloc] initWithRows:6];
     self.stackerView.delegate = self;
     [self.view addSubview:self.stackerView];
     

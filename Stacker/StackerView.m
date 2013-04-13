@@ -38,7 +38,7 @@
     
     CGFloat yOffset = 0;
     for (int i=0;i<self.rows;i++) {
-        StackerRow *row = [[StackerRow alloc] initWithDefaultHighlightCount:3 cycleTime:0.3];
+        StackerRow *row = [[StackerRow alloc] initWithDefaultHighlightCount:3 cycleTime:0.05*(i+1)];
         [stackerRows addObject:row];
         [self addSubview:row];
         
@@ -108,6 +108,7 @@
 
 - (NSTimer*) timerForRow:(StackerRow *)row
 {
+    NSLog(@"%f", row.cycleTime);
     return [NSTimer scheduledTimerWithTimeInterval:row.cycleTime target:self selector:@selector(cycle:) userInfo:nil repeats:YES];
 }
 
