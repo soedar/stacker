@@ -46,6 +46,7 @@
 		600DBF551718DEE700F15020 /* StackerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerBox.m; sourceTree = "<group>"; };
 		600DBF571718EBCD00F15020 /* StackerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerView.h; sourceTree = "<group>"; };
 		600DBF581718EBCD00F15020 /* StackerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerView.m; sourceTree = "<group>"; };
+		60A6C5AB1719438600E2A1D3 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 				600DBF4F1718DD8500F15020 /* StackerRow.m */,
 				600DBF541718DEE700F15020 /* StackerBox.h */,
 				600DBF551718DEE700F15020 /* StackerBox.m */,
+				60A6C5AB1719438600E2A1D3 /* Constants.h */,
 				600DBF321718DD5F00F15020 /* Supporting Files */,
 			);
 			path = Stacker;
@@ -316,6 +318,7 @@
 				600DBF4D1718DD5F00F15020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

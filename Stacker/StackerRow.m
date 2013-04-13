@@ -8,8 +8,8 @@
 
 #import "StackerRow.h"
 #import "StackerBox.h"
+#import "Constants.h"
 
-#define ROW_SIZE        7
 #define BOX_MARGIN_X    2
 
 #define DIRECTION_LEFT  -1
@@ -40,19 +40,9 @@
     return rowInfo;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (id) initWithDefaultHighlightCount:(int)defaultCount cycleTime:(CGFloat)cycleTime
 {
-    CGRect frame = CGRectMake(0, 0, ROW_SIZE*30, 30);
-    self = [self initWithFrame:frame];
+    self = [super init];
     if (self) {
         [self setupBoxes];
         _defaultHighlightCount = defaultCount;
@@ -67,8 +57,8 @@
 {
     NSMutableArray *boxes = [NSMutableArray array];
     CGFloat xOffset = 0;
-    for (int i=0;i<ROW_SIZE;i++) {
-        StackerBox *box = [[StackerBox alloc] initWithActiveColor:[UIColor blueColor]];
+    for (int i=0;i<COLUMN_COUNT;i++) {
+        StackerBox *box = [[StackerBox alloc] initWithHighlightColor:[UIColor blueColor]];
         [boxes addObject:box];
         [self addSubview:box];
         
@@ -80,6 +70,9 @@
     }
     
     self.stackerBoxes = [[NSArray alloc] initWithArray:boxes];
+    
+    // Update the frame of the view
+    self.frame = CGRectMake(0,0,xOffset-BOX_MARGIN_X,BOX_SIZE_IPHONE);
 }
 
 - (void) setRowInfo:(uint8_t)rowInfo
@@ -87,11 +80,11 @@
     _rowInfo = rowInfo;
 
     // Toggle the right boxes
-    for (int i=0;i<ROW_SIZE;i++) {
+    for (int i=0;i<COLUMN_COUNT;i++) {
         StackerBox *box = self.stackerBoxes[i];
         BOOL isActive = (rowInfo & (1<<i));
         
-        box.isActive = isActive;
+        box.isHighlighted = isActive;
     }
 }
 
@@ -114,7 +107,7 @@
 }
 
 - (void) cycle {
-    int degreeOfFreedom = ROW_SIZE - self.highlightCount;
+    int degreeOfFreedom = COLUMN_COUNT - self.highlightCount;
     // Can't move at all if its not active or if all the light is maxed
     if (degreeOfFreedom == 0) {
         return;

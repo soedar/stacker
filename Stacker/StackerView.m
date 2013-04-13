@@ -8,6 +8,7 @@
 
 #import "StackerView.h"
 #import "StackerRow.h"
+#import "Constants.h"
 
 #define ROW_Y_OFFSET    2
 
@@ -21,19 +22,9 @@
 @end
 @implementation StackerView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (id) initWithRows:(int)rows
 {
-    CGRect frame = CGRectMake(0, 0, 30*7, 30*rows);
-    self = [self initWithFrame:frame];
+    self = [super init];
     if (self) {
         self.rows = rows;
         [self setupStackerRows];
@@ -59,6 +50,10 @@
     }
     
     self.stackerRows = [[stackerRows reverseObjectEnumerator] allObjects];
+    
+    // Update the frame
+    StackerRow *row = self.stackerRows[0];
+    self.frame = CGRectMake(0,0,row.frame.size.width,yOffset-ROW_Y_OFFSET);
 }
 
 - (StackerRow*) currentRow

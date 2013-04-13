@@ -10,8 +10,8 @@
 
 @interface StackerBox : UIView
 
-@property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL isHighlighted;
 
-- (id) initWithActiveColor:(UIColor*)activeColor;
+- (id) initWithHighlightColor:(UIColor*)highlightColor;
 
 @end

@@ -7,12 +7,13 @@
 //
 
 #import "StackerBox.h"
+#import "Constants.h"
 
-#define BOX_FRAME_IPHONE    CGRectMake(0,0,30,30)
+#define BOX_FRAME_IPHONE    CGRectMake(0,0,BOX_SIZE_IPHONE,BOX_SIZE_IPHONE)
 
 @interface StackerBox ()
 
-@property (nonatomic, strong) UIColor *activeColor;
+@property (nonatomic, strong) UIColor *highlightColor;
 @property (nonatomic, strong) UIColor *passiveColor;
 @property (nonatomic, strong) UIView *boxView;
 
@@ -29,12 +30,13 @@
     return self;
 }
 
-- (id)initWithActiveColor:(UIColor *)activeColor
+- (id)initWithHighlightColor:(UIColor *)highlightColor
 {
     self = [self initWithFrame:BOX_FRAME_IPHONE];
     if (self) {
-        self.activeColor = activeColor;
+        self.highlightColor = highlightColor;
         self.passiveColor = [UIColor lightGrayColor];
+        self.passiveColor = [UIColor colorWithWhite:1.0 alpha:0.3];
         
         [self setupBoxView];
     }
@@ -46,12 +48,12 @@
     self.boxView = [[UIView alloc] initWithFrame:self.frame];
     [self addSubview:self.boxView];
     
-    self.isActive = NO;
+    self.isHighlighted = NO;
 }
 
-- (void) setIsActive:(BOOL)isActive
+- (void) setIsHighlighted:(BOOL)isHighlighted
 {
-    _isActive = isActive;
-    self.boxView.backgroundColor = (isActive) ? self.activeColor : self.passiveColor;
+    _isHighlighted = isHighlighted;
+    self.boxView.backgroundColor = (isHighlighted) ? self.highlightColor : self.passiveColor;
 }
 @end
