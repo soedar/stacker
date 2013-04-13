@@ -9,7 +9,8 @@
 #import "StackerRow.h"
 #import "StackerBox.h"
 
-#define ROW_SIZE    7
+#define ROW_SIZE        7
+#define BOX_MARGIN_X    2
 
 @interface StackerRow ()
 
@@ -30,7 +31,8 @@
 
 - (id) initWithRowInfo:(uint8_t)rowInfo
 {
-    self = [self initWithFrame:CGRectZero];
+    CGRect frame = CGRectMake(0, 0, ROW_SIZE*30, 30);
+    self = [self initWithFrame:frame];
     if (self) {
         [self setupBoxes];
         
@@ -43,9 +45,17 @@
 - (void) setupBoxes
 {
     NSMutableArray *boxes = [NSMutableArray array];
+    CGFloat xOffset = 0;
     for (int i=0;i<ROW_SIZE;i++) {
         StackerBox *box = [[StackerBox alloc] initWithActiveColor:[UIColor blueColor]];
         [boxes addObject:box];
+        [self addSubview:box];
+        
+        CGRect frame = box.frame;
+        frame.origin.x = xOffset;
+        box.frame = frame;
+        
+        xOffset += frame.size.width + BOX_MARGIN_X;
     }
     
     self.stackerBoxes = [[NSArray alloc] initWithArray:boxes];

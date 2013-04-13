@@ -8,6 +8,8 @@
 
 #import "StackerBox.h"
 
+#define BOX_FRAME_IPHONE    CGRectMake(0,0,30,30)
+
 @interface StackerBox ()
 
 @property (nonatomic, strong) UIColor *activeColor;
@@ -29,7 +31,7 @@
 
 - (id)initWithActiveColor:(UIColor *)activeColor
 {
-    self = [self initWithFrame:CGRectZero];
+    self = [self initWithFrame:BOX_FRAME_IPHONE];
     if (self) {
         self.activeColor = activeColor;
         self.passiveColor = [UIColor lightGrayColor];
