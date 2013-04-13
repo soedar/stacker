@@ -50,7 +50,7 @@
         self.position = 0;
         self.direction = DIRECTION_RIGHT;
         
-        self.rowInfo = self.initialRowInfo;
+        self.isActive = NO;
     }
     return self;
 }
@@ -100,9 +100,13 @@
     }
 }
 
+- (void) setIsActive:(BOOL)isActive {
+    self.rowInfo = (isActive) ? self.initialRowInfo : 0;
+}
+
 - (void) cycle {
-    // Can't move at all
-    if (self.degreeOfFreedom == 0) {
+    // Can't move at all if its not active or if all the light is maxed
+    if (self.degreeOfFreedom == 0 || !self.isActive) {
         return;
     }
     

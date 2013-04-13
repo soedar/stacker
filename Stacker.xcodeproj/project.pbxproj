@@ -20,6 +20,7 @@
 		600DBF481718DD5F00F15020 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF461718DD5F00F15020 /* ViewController.xib */; };
 		600DBF501718DD8500F15020 /* StackerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF4F1718DD8500F15020 /* StackerRow.m */; };
 		600DBF561718DEE700F15020 /* StackerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF551718DEE700F15020 /* StackerBox.m */; };
+		600DBF591718EBCD00F15020 /* StackerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF581718EBCD00F15020 /* StackerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		600DBF4F1718DD8500F15020 /* StackerRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerRow.m; sourceTree = "<group>"; };
 		600DBF541718DEE700F15020 /* StackerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerBox.h; sourceTree = "<group>"; };
 		600DBF551718DEE700F15020 /* StackerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerBox.m; sourceTree = "<group>"; };
+		600DBF571718EBCD00F15020 /* StackerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerView.h; sourceTree = "<group>"; };
+		600DBF581718EBCD00F15020 /* StackerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				600DBF431718DD5F00F15020 /* ViewController.h */,
 				600DBF441718DD5F00F15020 /* ViewController.m */,
 				600DBF461718DD5F00F15020 /* ViewController.xib */,
+				600DBF571718EBCD00F15020 /* StackerView.h */,
+				600DBF581718EBCD00F15020 /* StackerView.m */,
 				600DBF4E1718DD8500F15020 /* StackerRow.h */,
 				600DBF4F1718DD8500F15020 /* StackerRow.m */,
 				600DBF541718DEE700F15020 /* StackerBox.h */,
@@ -188,6 +193,7 @@
 				600DBF451718DD5F00F15020 /* ViewController.m in Sources */,
 				600DBF501718DD8500F15020 /* StackerRow.m in Sources */,
 				600DBF561718DEE700F15020 /* StackerBox.m in Sources */,
+				600DBF591718EBCD00F15020 /* StackerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

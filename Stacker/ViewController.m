@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "StackerBox.h"
+#import "StackerView.h"
 #import "StackerRow.h"
 
 @interface ViewController ()
@@ -21,8 +21,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    /*
     self.row = [[StackerRow alloc] initWithCount:1];
     [self.view addSubview:self.row];
+     */
+    
+    StackerView *stacker = [[StackerView alloc] initWithRows:4];
+    [self.view addSubview:stacker];
 }
 
 - (void)didReceiveMemoryWarning

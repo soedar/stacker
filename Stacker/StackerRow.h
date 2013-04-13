@@ -12,6 +12,7 @@
 
 @property (nonatomic) uint8_t rowInfo;
 @property (nonatomic, readonly) int initialCount;
+@property (nonatomic) BOOL isActive;
 
 - (id) initWithCount:(int)count;
 - (void) cycle;
