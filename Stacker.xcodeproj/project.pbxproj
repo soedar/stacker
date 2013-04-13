@@ -18,6 +18,8 @@
 		600DBF421718DD5F00F15020 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF411718DD5F00F15020 /* Default-568h@2x.png */; };
 		600DBF451718DD5F00F15020 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF441718DD5F00F15020 /* ViewController.m */; };
 		600DBF481718DD5F00F15020 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF461718DD5F00F15020 /* ViewController.xib */; };
+		600DBF501718DD8500F15020 /* StackerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF4F1718DD8500F15020 /* StackerRow.m */; };
+		600DBF561718DEE700F15020 /* StackerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF551718DEE700F15020 /* StackerBox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		600DBF431718DD5F00F15020 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		600DBF441718DD5F00F15020 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		600DBF471718DD5F00F15020 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		600DBF4E1718DD8500F15020 /* StackerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerRow.h; sourceTree = "<group>"; };
+		600DBF4F1718DD8500F15020 /* StackerRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerRow.m; sourceTree = "<group>"; };
+		600DBF541718DEE700F15020 /* StackerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerBox.h; sourceTree = "<group>"; };
+		600DBF551718DEE700F15020 /* StackerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				600DBF431718DD5F00F15020 /* ViewController.h */,
 				600DBF441718DD5F00F15020 /* ViewController.m */,
 				600DBF461718DD5F00F15020 /* ViewController.xib */,
+				600DBF4E1718DD8500F15020 /* StackerRow.h */,
+				600DBF4F1718DD8500F15020 /* StackerRow.m */,
+				600DBF541718DEE700F15020 /* StackerBox.h */,
+				600DBF551718DEE700F15020 /* StackerBox.m */,
 				600DBF321718DD5F00F15020 /* Supporting Files */,
 			);
 			path = Stacker;
@@ -176,6 +186,8 @@
 				600DBF381718DD5F00F15020 /* main.m in Sources */,
 				600DBF3C1718DD5F00F15020 /* AppDelegate.m in Sources */,
 				600DBF451718DD5F00F15020 /* ViewController.m in Sources */,
+				600DBF501718DD8500F15020 /* StackerRow.m in Sources */,
+				600DBF561718DEE700F15020 /* StackerBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
