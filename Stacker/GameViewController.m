@@ -10,6 +10,7 @@
 #import "StackerView.h"
 #import "Constants.h"
 #import "PlaymonOffersViewController.h"
+#import "PlaymonWalletViewController.h"
 
 @interface GameViewController () <StackerViewDelegate>
 @property (nonatomic, strong) StackerView *stackerView;
@@ -117,9 +118,13 @@
     PlaymonOffersViewController *offersController = [[PlaymonOffersViewController alloc] init];
     UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
     
-    offersController.navigationItem.leftBarButtonItem = backButton;
+    PlaymonWalletViewController *walletController = [[PlaymonWalletViewController alloc] init];
+    UINavigationController *walletNavController = [[UINavigationController alloc] initWithRootViewController:walletController];
     
-    NSArray *tabViewControllers = [[NSArray alloc] initWithObjects:offersNavController, nil];
+    offersController.navigationItem.leftBarButtonItem = backButton;
+    walletController.navigationItem.leftBarButtonItem = backButton;
+    
+    NSArray *tabViewControllers = [[NSArray alloc] initWithObjects:offersNavController, walletNavController, nil];
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [tabBarController setViewControllers:tabViewControllers animated:YES];
     
@@ -135,6 +140,13 @@
 
 - (IBAction)stopRow:(id)sender
 {
+    /*
+    UIViewController *playmonController = [self playmonController];
+    [self presentViewController:playmonController animated:YES completion:nil];
+    return;
+     */
+             
+    
     [self.stackerView moveToNextRow];
 }
 
