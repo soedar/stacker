@@ -11,5 +11,6 @@
 
 #define BOX_SIZE_IPHONE     30
 #define COLUMN_COUNT        7
+#define INITIAL_COINS       1
 
 #endif

@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "StackerView.h"
+#import "Constants.h"
 
 @interface GameViewController () <StackerViewDelegate>
 @property (nonatomic, strong) StackerView *stackerView;
@@ -16,6 +17,7 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *resetButton;
 @property (nonatomic, weak) IBOutlet UILabel *resetLabel;
+@property (nonatomic, strong) UIAlertView *outOfCoinsAlert;
 
 @property (nonatomic) int coins;
 
@@ -35,7 +37,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.coins = 3;
+    self.coins = INITIAL_COINS;
     
     [self initStackerView];
     self.stopButton.hidden = YES;
@@ -79,6 +81,28 @@
     self.coinsLabel.text = [NSString stringWithFormat:@"x %i", coins];
 }
 
+#pragma mark - Alert views
+
+- (void) showOutOfCoinsAlert
+{
+    self.outOfCoinsAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Out of coins!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Buy Coins", @"Get Free Coins", nil];
+    [self.outOfCoinsAlert show];
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UIAlertView *iapAlert = [[UIAlertView alloc] initWithTitle:@"Launch In App Purchase window" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    
+    switch (buttonIndex) {
+        case 1:
+            [iapAlert show];
+            break;
+        case 2:
+            [iapAlert show];
+            break;
+    }
+}
+
 #pragma mark - Button action
 
 - (IBAction)stopRow:(id)sender
@@ -90,6 +114,7 @@
 {
     if (self.coins == 0) {
         // Dont do nothing, user ran out of life
+        [self showOutOfCoinsAlert];
     }
     else {
         self.coins--;
