@@ -12,6 +12,10 @@
 @interface GameViewController () <StackerViewDelegate>
 @property (nonatomic, strong) StackerView *stackerView;
 @property (nonatomic, weak) IBOutlet UILabel *coinsLabel;
+@property (nonatomic, weak) IBOutlet UIButton *stopButton;
+
+@property (nonatomic, weak) IBOutlet UIButton *resetButton;
+@property (nonatomic, weak) IBOutlet UILabel *resetLabel;
 
 @property (nonatomic) int coins;
 
@@ -34,6 +38,15 @@
     self.coins = 3;
     
     [self initStackerView];
+    self.stopButton.hidden = YES;
+    
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options:UIViewAnimationOptionAutoreverse|UIViewAnimationOptionRepeat
+                     animations:^{
+                         self.resetLabel.transform = CGAffineTransformMakeScale(1.2, 1.2);
+                     }
+                     completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,8 +69,6 @@
     self.stackerView.center = CGPointMake(self.view.center.x, self.stackerView.center.y);
     self.stackerView.delegate = self;
     [self.view addSubview:self.stackerView];
-    
-    [self.stackerView start];
 }
 
 - (void) setCoins:(int)coins
@@ -75,14 +86,28 @@
 
 - (IBAction)reset:(id)sender
 {
-    [self.stackerView removeFromSuperview];
-    [self initStackerView];
+    if (self.coins == 0) {
+        // Dont do nothing, user ran out of life
+    }
+    else {
+        self.coins--;
+        self.resetButton.hidden = YES;
+        self.resetLabel.hidden = YES;
+        self.stopButton.hidden = NO;
+        [self.stackerView removeFromSuperview];
+        [self initStackerView];
+        [self.stackerView start];
+    }
 }
 
 #pragma mark - Delegate method
 
 - (void) stackerView:(StackerView *)stackerView gameOverWithLastCompletedRow:(int)row
 {
+    self.stopButton.hidden = YES;
+    self.resetButton.hidden = NO;
+    self.resetLabel.hidden = NO;
+    
     NSArray *levelInfo = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StackerLevel" ofType:@"plist"]];
     
     NSString *message = @"Not good enough!";
