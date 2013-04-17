@@ -46,9 +46,9 @@
 	</dict>
 	<dict>
 		<key>highlightCount</key>
-		<integer>6</integer>
+		<integer>1</integer>
 		<key>cycleTime</key>
-		<real>0.05</real>
+		<real>0.1</real>
 	</dict>
 </array>
 </plist>
