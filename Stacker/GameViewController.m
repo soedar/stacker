@@ -95,17 +95,24 @@
 {
     UIAlertView *iapAlert = [[UIAlertView alloc] initWithTitle:@"Launch In App Purchase window" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     
-    UIViewController *playmonController = [self playmonController];
     
     switch (buttonIndex) {
         case 1:
             [iapAlert show];
             break;
         case 2:
-            [self presentViewController:playmonController
-                               animated:YES completion:nil];
+            [self showPlaymonController];
             break;
     }
+}
+
+#pragma mark - Playmon Controllers
+
+- (void) showPlaymonController
+{
+    UIViewController *playmonController = [self playmonController];
+    [self presentViewController:playmonController
+                       animated:YES completion:nil];
 }
 
 - (UIViewController *)playmonController
@@ -140,13 +147,6 @@
 
 - (IBAction)stopRow:(id)sender
 {
-    /*
-    UIViewController *playmonController = [self playmonController];
-    [self presentViewController:playmonController animated:YES completion:nil];
-    return;
-     */
-             
-    
     [self.stackerView moveToNextRow];
 }
 
@@ -165,6 +165,11 @@
         [self initStackerView];
         [self.stackerView start];
     }
+}
+
+- (IBAction)showPlaymon:(id)sender
+{
+    [self showPlaymonController];
 }
 
 #pragma mark - Delegate method
