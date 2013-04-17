@@ -26,6 +26,8 @@
 		60834D78171E8868004943FA /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60834D76171E8868004943FA /* MenuViewController.xib */; };
 		60834D7A171E8D25004943FA /* yellow-coin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60834D79171E8D25004943FA /* yellow-coin@2x.png */; };
 		60834D7C171E9752004943FA /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 60834D7B171E9752004943FA /* lightbulb.png */; };
+		60834D80171E9C25004943FA /* PlaymonOffersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60834D7E171E9C25004943FA /* PlaymonOffersViewController.m */; };
+		60834D81171E9C25004943FA /* PlaymonOffersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60834D7F171E9C25004943FA /* PlaymonOffersViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,9 @@
 		60834D76171E8868004943FA /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		60834D79171E8D25004943FA /* yellow-coin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow-coin@2x.png"; sourceTree = "<group>"; };
 		60834D7B171E9752004943FA /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
+		60834D7D171E9C25004943FA /* PlaymonOffersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaymonOffersViewController.h; sourceTree = "<group>"; };
+		60834D7E171E9C25004943FA /* PlaymonOffersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaymonOffersViewController.m; sourceTree = "<group>"; };
+		60834D7F171E9C25004943FA /* PlaymonOffersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaymonOffersViewController.xib; sourceTree = "<group>"; };
 		60A6C5AB1719438600E2A1D3 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +111,7 @@
 			children = (
 				60834D7B171E9752004943FA /* lightbulb.png */,
 				60834D79171E8D25004943FA /* yellow-coin@2x.png */,
+				60834D82171E9C2A004943FA /* Playmon */,
 				60834D73171E880E004943FA /* Stacker Game */,
 				600DBF3A1718DD5F00F15020 /* AppDelegate.h */,
 				600DBF3B1718DD5F00F15020 /* AppDelegate.m */,
@@ -147,6 +153,16 @@
 				60834D71171E80AF004943FA /* StackerLevel.plist */,
 			);
 			name = "Stacker Game";
+			sourceTree = "<group>";
+		};
+		60834D82171E9C2A004943FA /* Playmon */ = {
+			isa = PBXGroup;
+			children = (
+				60834D7D171E9C25004943FA /* PlaymonOffersViewController.h */,
+				60834D7E171E9C25004943FA /* PlaymonOffersViewController.m */,
+				60834D7F171E9C25004943FA /* PlaymonOffersViewController.xib */,
+			);
+			name = Playmon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +225,7 @@
 				60834D78171E8868004943FA /* MenuViewController.xib in Resources */,
 				60834D7A171E8D25004943FA /* yellow-coin@2x.png in Resources */,
 				60834D7C171E9752004943FA /* lightbulb.png in Resources */,
+				60834D81171E9C25004943FA /* PlaymonOffersViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +243,7 @@
 				600DBF561718DEE700F15020 /* StackerBox.m in Sources */,
 				600DBF591718EBCD00F15020 /* StackerView.m in Sources */,
 				60834D77171E8868004943FA /* MenuViewController.m in Sources */,
+				60834D80171E9C25004943FA /* PlaymonOffersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
