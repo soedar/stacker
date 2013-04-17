@@ -16,12 +16,14 @@
 		600DBF3E1718DD5F00F15020 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF3D1718DD5F00F15020 /* Default.png */; };
 		600DBF401718DD5F00F15020 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF3F1718DD5F00F15020 /* Default@2x.png */; };
 		600DBF421718DD5F00F15020 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF411718DD5F00F15020 /* Default-568h@2x.png */; };
-		600DBF451718DD5F00F15020 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF441718DD5F00F15020 /* ViewController.m */; };
-		600DBF481718DD5F00F15020 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF461718DD5F00F15020 /* ViewController.xib */; };
+		600DBF451718DD5F00F15020 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF441718DD5F00F15020 /* GameViewController.m */; };
+		600DBF481718DD5F00F15020 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600DBF461718DD5F00F15020 /* GameViewController.xib */; };
 		600DBF501718DD8500F15020 /* StackerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF4F1718DD8500F15020 /* StackerRow.m */; };
 		600DBF561718DEE700F15020 /* StackerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF551718DEE700F15020 /* StackerBox.m */; };
 		600DBF591718EBCD00F15020 /* StackerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF581718EBCD00F15020 /* StackerView.m */; };
 		60834D72171E80AF004943FA /* StackerLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60834D71171E80AF004943FA /* StackerLevel.plist */; };
+		60834D77171E8868004943FA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60834D75171E8868004943FA /* MenuViewController.m */; };
+		60834D78171E8868004943FA /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60834D76171E8868004943FA /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,9 +40,9 @@
 		600DBF3D1718DD5F00F15020 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		600DBF3F1718DD5F00F15020 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		600DBF411718DD5F00F15020 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		600DBF431718DD5F00F15020 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		600DBF441718DD5F00F15020 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		600DBF471718DD5F00F15020 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		600DBF431718DD5F00F15020 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		600DBF441718DD5F00F15020 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		600DBF471718DD5F00F15020 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GameViewController.xib; sourceTree = "<group>"; };
 		600DBF4E1718DD8500F15020 /* StackerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerRow.h; sourceTree = "<group>"; };
 		600DBF4F1718DD8500F15020 /* StackerRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerRow.m; sourceTree = "<group>"; };
 		600DBF541718DEE700F15020 /* StackerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerBox.h; sourceTree = "<group>"; };
@@ -48,6 +50,9 @@
 		600DBF571718EBCD00F15020 /* StackerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerView.h; sourceTree = "<group>"; };
 		600DBF581718EBCD00F15020 /* StackerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerView.m; sourceTree = "<group>"; };
 		60834D71171E80AF004943FA /* StackerLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StackerLevel.plist; sourceTree = "<group>"; };
+		60834D74171E8868004943FA /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		60834D75171E8868004943FA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		60834D76171E8868004943FA /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		60A6C5AB1719438600E2A1D3 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,20 +100,17 @@
 		600DBF311718DD5F00F15020 /* Stacker */ = {
 			isa = PBXGroup;
 			children = (
+				60834D73171E880E004943FA /* Stacker Game */,
 				600DBF3A1718DD5F00F15020 /* AppDelegate.h */,
 				600DBF3B1718DD5F00F15020 /* AppDelegate.m */,
-				600DBF431718DD5F00F15020 /* ViewController.h */,
-				600DBF441718DD5F00F15020 /* ViewController.m */,
-				600DBF461718DD5F00F15020 /* ViewController.xib */,
-				600DBF571718EBCD00F15020 /* StackerView.h */,
-				600DBF581718EBCD00F15020 /* StackerView.m */,
-				600DBF4E1718DD8500F15020 /* StackerRow.h */,
-				600DBF4F1718DD8500F15020 /* StackerRow.m */,
-				600DBF541718DEE700F15020 /* StackerBox.h */,
-				600DBF551718DEE700F15020 /* StackerBox.m */,
+				60834D74171E8868004943FA /* MenuViewController.h */,
+				60834D75171E8868004943FA /* MenuViewController.m */,
+				60834D76171E8868004943FA /* MenuViewController.xib */,
+				600DBF431718DD5F00F15020 /* GameViewController.h */,
+				600DBF441718DD5F00F15020 /* GameViewController.m */,
+				600DBF461718DD5F00F15020 /* GameViewController.xib */,
 				60A6C5AB1719438600E2A1D3 /* Constants.h */,
 				600DBF321718DD5F00F15020 /* Supporting Files */,
-				60834D71171E80AF004943FA /* StackerLevel.plist */,
 			);
 			path = Stacker;
 			sourceTree = "<group>";
@@ -125,6 +127,20 @@
 				600DBF411718DD5F00F15020 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60834D73171E880E004943FA /* Stacker Game */ = {
+			isa = PBXGroup;
+			children = (
+				600DBF571718EBCD00F15020 /* StackerView.h */,
+				600DBF581718EBCD00F15020 /* StackerView.m */,
+				600DBF4E1718DD8500F15020 /* StackerRow.h */,
+				600DBF4F1718DD8500F15020 /* StackerRow.m */,
+				600DBF541718DEE700F15020 /* StackerBox.h */,
+				600DBF551718DEE700F15020 /* StackerBox.m */,
+				60834D71171E80AF004943FA /* StackerLevel.plist */,
+			);
+			name = "Stacker Game";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +198,9 @@
 				600DBF3E1718DD5F00F15020 /* Default.png in Resources */,
 				600DBF401718DD5F00F15020 /* Default@2x.png in Resources */,
 				600DBF421718DD5F00F15020 /* Default-568h@2x.png in Resources */,
-				600DBF481718DD5F00F15020 /* ViewController.xib in Resources */,
+				600DBF481718DD5F00F15020 /* GameViewController.xib in Resources */,
 				60834D72171E80AF004943FA /* StackerLevel.plist in Resources */,
+				60834D78171E8868004943FA /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,10 +213,11 @@
 			files = (
 				600DBF381718DD5F00F15020 /* main.m in Sources */,
 				600DBF3C1718DD5F00F15020 /* AppDelegate.m in Sources */,
-				600DBF451718DD5F00F15020 /* ViewController.m in Sources */,
+				600DBF451718DD5F00F15020 /* GameViewController.m in Sources */,
 				600DBF501718DD8500F15020 /* StackerRow.m in Sources */,
 				600DBF561718DEE700F15020 /* StackerBox.m in Sources */,
 				600DBF591718EBCD00F15020 /* StackerView.m in Sources */,
+				60834D77171E8868004943FA /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,12 +232,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		600DBF461718DD5F00F15020 /* ViewController.xib */ = {
+		600DBF461718DD5F00F15020 /* GameViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				600DBF471718DD5F00F15020 /* en */,
 			);
-			name = ViewController.xib;
+			name = GameViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

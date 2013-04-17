@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Playmon. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GameViewController.h"
 #import "StackerView.h"
 
-@interface ViewController () <StackerViewDelegate>
+@interface GameViewController () <StackerViewDelegate>
 @property (nonatomic, strong) StackerView *stackerView;
 
 @end
 
-@implementation ViewController
+@implementation GameViewController
 
 - (void)viewDidLoad
 {
