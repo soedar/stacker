@@ -12,21 +12,26 @@
 
 #define ROW_Y_OFFSET    2
 
+#define HIGHLIGHT_COUNT_KEY     @"highlightCount"
+#define CYCLE_TIME_KEY          @"cycleTime"
+
 @interface StackerView ()
 
 @property (nonatomic) int rows;
 @property (nonatomic) int activeRowId;
 @property (nonatomic, strong) NSArray *stackerRows;
 @property (nonatomic, strong) NSTimer *mainTimer;
+@property (nonatomic, strong) NSArray *levelInfo;
 
 @end
 @implementation StackerView
 
-- (id) initWithRows:(int)rows
+- (id) initWithLevel:(NSArray*)levelInfo
 {
     self = [super init];
     if (self) {
-        self.rows = rows;
+        self.rows = levelInfo.count;
+        self.levelInfo = [[levelInfo reverseObjectEnumerator] allObjects];
         [self setupStackerRows];
     }
     return self;
@@ -38,7 +43,10 @@
     
     CGFloat yOffset = 0;
     for (int i=0;i<self.rows;i++) {
-        StackerRow *row = [[StackerRow alloc] initWithDefaultHighlightCount:3 cycleTime:0.03*(i+1)];
+        int highlightCount = [self.levelInfo[i][HIGHLIGHT_COUNT_KEY] intValue];
+        CGFloat cycleTime = [self.levelInfo[i][CYCLE_TIME_KEY] floatValue];
+        
+        StackerRow *row = [[StackerRow alloc] initWithDefaultHighlightCount:highlightCount cycleTime:cycleTime];
         [stackerRows addObject:row];
         [self addSubview:row];
         
@@ -69,7 +77,7 @@
 
 - (void) start
 {
-    [self.currentRow activateWithHighlightCount:3];
+    [self.currentRow activateWithHighlightCount:self.currentRow.defaultHighlightCount];
     self.mainTimer = [self timerForRow:self.currentRow];
 }
 
@@ -89,6 +97,8 @@
    
     if (highlightCount > 0 && self.activeRowId+1 < self.rows) {
         self.activeRowId++;
+        
+        highlightCount = MIN(highlightCount, self.currentRow.defaultHighlightCount);
         [self.currentRow activateWithHighlightCount:highlightCount];
     
         self.mainTimer = [self timerForRow:self.currentRow];

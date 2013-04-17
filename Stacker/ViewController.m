@@ -47,7 +47,9 @@
 
 - (void) initStackerView
 {
-    self.stackerView = [[StackerView alloc] initWithRows:8];
+    NSArray *levelInfo = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StackerLevel" ofType:@"plist"]];
+    
+    self.stackerView = [[StackerView alloc] initWithLevel:levelInfo];
     self.stackerView.delegate = self;
     [self.view addSubview:self.stackerView];
     
@@ -59,8 +61,10 @@
 
 - (void) stackerView:(StackerView *)stackerView gameOverWithLastCompletedRow:(int)row
 {
+    NSArray *levelInfo = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StackerLevel" ofType:@"plist"]];
+    
     NSString *message = @"Not good enough!";
-    if (row == 8) {
+    if (row == levelInfo.count-1) {
         message = @"Ok good job!";
     }
     

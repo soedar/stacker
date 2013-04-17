@@ -20,8 +20,7 @@
 
 @property (nonatomic, assign) id<StackerViewDelegate> delegate;
 
-- (id) initWithRows:(int)rows;
-
+- (id) initWithLevel:(NSArray*)levelInfo;
 - (void) start;
 - (void) moveToNextRow;
 
