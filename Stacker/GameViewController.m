@@ -40,6 +40,7 @@
     [self initStackerView];
     self.stopButton.hidden = YES;
     
+    /*
     [UIView animateWithDuration:0.3
                           delay:0
                         options:UIViewAnimationOptionAutoreverse|UIViewAnimationOptionRepeat
@@ -47,6 +48,7 @@
                          self.resetLabel.transform = CGAffineTransformMakeScale(1.2, 1.2);
                      }
                      completion:nil];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,13 +112,13 @@
     
     NSArray *levelInfo = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StackerLevel" ofType:@"plist"]];
     
-    NSString *message = @"Not good enough!";
     if (row == levelInfo.count-1) {
-        message = @"Ok good job!";
+        NSString *message = @"Ok good job! You won!";
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
     }
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [alertView show];
+
 }
 
 @end

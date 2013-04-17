@@ -90,6 +90,7 @@
 {
     [self.mainTimer invalidate];
     
+    uint8_t finalRowInfo = self.currentRow.rowInfo;
     if (self.previousRow) {
         self.currentRow.rowInfo &= self.previousRow.rowInfo;
     }
@@ -105,6 +106,14 @@
     }
     
     else {
+        [UIView animateWithDuration:0.3
+                              delay:0
+                            options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse
+                         animations:^{
+                             self.currentRow.rowInfo = finalRowInfo;
+                         }
+                         completion:nil];
+        
         if ([self.delegate respondsToSelector:@selector(stackerView:gameOverWithLastCompletedRow:)]) {
             if (highlightCount > 0) {
                 [self.delegate stackerView:self gameOverWithLastCompletedRow:self.activeRowId];
