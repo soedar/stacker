@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "PlaymonOffersViewController.h"
 #import "PlaymonWalletViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface GameViewController () <StackerViewDelegate>
 @property (nonatomic, strong) StackerView *stackerView;
@@ -43,6 +44,7 @@
     self.view.backgroundColor = BACKGROUND_COLOR;
     
     [self initStackerView];
+    [self setupStopButton];
     self.stopButton.hidden = YES;
     
     /*
@@ -76,6 +78,13 @@
     self.stackerView.center = CGPointMake(self.view.center.x, self.stackerView.center.y);
     self.stackerView.delegate = self;
     [self.view addSubview:self.stackerView];
+}
+
+- (void) setupStopButton
+{
+    self.stopButton.backgroundColor = BUTTON_BACKGROUND_COLOR;
+    self.stopButton.layer.masksToBounds = YES;
+    self.stopButton.layer.cornerRadius = 8.0f;
 }
 
 - (void) setCoins:(int)coins
