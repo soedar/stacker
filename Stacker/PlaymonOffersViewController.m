@@ -9,6 +9,7 @@
 #import "PlaymonOffersViewController.h"
 #import "Constants.h"
 #import "GiftCard.h"
+#import "PlaymonCheckoutViewController.h"
 
 @interface PlaymonOffersViewController ()
 
@@ -72,6 +73,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = buttonFrame;
         button.tag = i;
+        [button addTarget:self action:@selector(cardTapped:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:giftCard.image forState:UIControlStateNormal];
         [view addSubview:button];
         
@@ -102,6 +104,17 @@
     center.x = self.view.center.x;
     self.titleLabel.center = center;
  */
+}
+
+#pragma mark - Button Action
+
+- (void) cardTapped:(UIButton*)button
+{
+    int tag = button.tag;
+    GiftCard *giftCard = [self getGiftCards][tag];
+    
+    PlaymonCheckoutViewController *checkOutVC = [[PlaymonCheckoutViewController alloc] initWithGiftCard:giftCard];
+    [self.navigationController pushViewController:checkOutVC animated:YES];
 }
 
 #pragma mark - Scroll View Delegate

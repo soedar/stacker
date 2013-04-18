@@ -23,6 +23,8 @@
 		600DBF591718EBCD00F15020 /* StackerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF581718EBCD00F15020 /* StackerView.m */; };
 		604B5F44171FCAC500860F93 /* mcdonalds.png in Resources */ = {isa = PBXBuildFile; fileRef = 604B5F43171FCAC500860F93 /* mcdonalds.png */; };
 		604B5F46171FCCDC00860F93 /* amazon.png in Resources */ = {isa = PBXBuildFile; fileRef = 604B5F45171FCCDC00860F93 /* amazon.png */; };
+		604B5F4A171FD34600860F93 /* PlaymonCheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604B5F48171FD34600860F93 /* PlaymonCheckoutViewController.m */; };
+		604B5F4B171FD34600860F93 /* PlaymonCheckoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 604B5F49171FD34600860F93 /* PlaymonCheckoutViewController.xib */; };
 		60834D72171E80AF004943FA /* StackerLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60834D71171E80AF004943FA /* StackerLevel.plist */; };
 		60834D77171E8868004943FA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60834D75171E8868004943FA /* MenuViewController.m */; };
 		60834D78171E8868004943FA /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60834D76171E8868004943FA /* MenuViewController.xib */; };
@@ -63,6 +65,9 @@
 		600DBF581718EBCD00F15020 /* StackerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerView.m; sourceTree = "<group>"; };
 		604B5F43171FCAC500860F93 /* mcdonalds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mcdonalds.png; sourceTree = "<group>"; };
 		604B5F45171FCCDC00860F93 /* amazon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amazon.png; sourceTree = "<group>"; };
+		604B5F47171FD34600860F93 /* PlaymonCheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaymonCheckoutViewController.h; sourceTree = "<group>"; };
+		604B5F48171FD34600860F93 /* PlaymonCheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaymonCheckoutViewController.m; sourceTree = "<group>"; };
+		604B5F49171FD34600860F93 /* PlaymonCheckoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaymonCheckoutViewController.xib; sourceTree = "<group>"; };
 		60834D71171E80AF004943FA /* StackerLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StackerLevel.plist; sourceTree = "<group>"; };
 		60834D74171E8868004943FA /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		60834D75171E8868004943FA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -185,6 +190,9 @@
 				60834D85171EA3CE004943FA /* PlaymonWalletViewController.xib */,
 				60DD6FAA171FAEC000C4819E /* GiftCard.h */,
 				60DD6FAB171FAEC100C4819E /* GiftCard.m */,
+				604B5F47171FD34600860F93 /* PlaymonCheckoutViewController.h */,
+				604B5F48171FD34600860F93 /* PlaymonCheckoutViewController.m */,
+				604B5F49171FD34600860F93 /* PlaymonCheckoutViewController.xib */,
 			);
 			name = Playmon;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 				60DD6FA9171FAE6E00C4819E /* itunes50.png in Resources */,
 				604B5F44171FCAC500860F93 /* mcdonalds.png in Resources */,
 				604B5F46171FCCDC00860F93 /* amazon.png in Resources */,
+				604B5F4B171FD34600860F93 /* PlaymonCheckoutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +297,7 @@
 				60834D80171E9C25004943FA /* PlaymonOffersViewController.m in Sources */,
 				60834D86171EA3CE004943FA /* PlaymonWalletViewController.m in Sources */,
 				60DD6FAC171FAEC100C4819E /* GiftCard.m in Sources */,
+				604B5F4A171FD34600860F93 /* PlaymonCheckoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
