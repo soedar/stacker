@@ -7,8 +7,11 @@
 //
 
 #import "PlaymonOffersViewController.h"
+#import "Constants.h"
 
 @interface PlaymonOffersViewController ()
+
+@property (nonatomic, weak) IBOutlet UIScrollView *cardScrollView;
 
 @end
 
@@ -19,7 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Playmon Offers";
+        self.title = @"Get more coins";
     }
     return self;
 }
@@ -28,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = BACKGROUND_COLOR;
 }
 
 - (void)didReceiveMemoryWarning

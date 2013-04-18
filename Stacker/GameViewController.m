@@ -134,6 +134,7 @@
     
     PlaymonOffersViewController *offersController = [[PlaymonOffersViewController alloc] init];
     UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
+    offersNavController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
     
     PlaymonWalletViewController *walletController = [[PlaymonWalletViewController alloc] init];
     UINavigationController *walletNavController = [[UINavigationController alloc] initWithRootViewController:walletController];
