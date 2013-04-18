@@ -149,9 +149,8 @@
 - (NSArray*) getGiftCards
 {
     GiftCard *appleOne = [GiftCard giftCardWithImage:[UIImage imageNamed:@"itunes15.png"] storeName:@"Apple" distance:nil title:@"Get 3 coins when you buy $15 gift card" coinsValue:3];
-    GiftCard *appleTwo = [GiftCard giftCardWithImage:[UIImage imageNamed:@"itunes25.png"] storeName:@"Apple" distance:nil title:@"Get 6 coins when you buy $25 gift card" coinsValue:6];
-    GiftCard *appleThree = [GiftCard giftCardWithImage:[UIImage imageNamed:@"itunes50.png"] storeName:@"Apple" distance:nil title:@"Get 10 coins when you buy $50 gift card" coinsValue:6];
-    return [NSArray arrayWithObjects:appleOne, appleTwo, appleThree, nil];
+    GiftCard *mcdonalds = [GiftCard giftCardWithImage:[UIImage imageNamed:@"mcdonalds.png"] storeName:@"McDonald's" distance:@"10m away" title:@"Get 3 coins when you buy $10 gift card" coinsValue:3];
+    return [NSArray arrayWithObjects:appleOne, mcdonalds, nil];
 }
 
 @end

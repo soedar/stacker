@@ -21,6 +21,7 @@
 		600DBF501718DD8500F15020 /* StackerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF4F1718DD8500F15020 /* StackerRow.m */; };
 		600DBF561718DEE700F15020 /* StackerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF551718DEE700F15020 /* StackerBox.m */; };
 		600DBF591718EBCD00F15020 /* StackerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600DBF581718EBCD00F15020 /* StackerView.m */; };
+		604B5F44171FCAC500860F93 /* mcdonalds.png in Resources */ = {isa = PBXBuildFile; fileRef = 604B5F43171FCAC500860F93 /* mcdonalds.png */; };
 		60834D72171E80AF004943FA /* StackerLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60834D71171E80AF004943FA /* StackerLevel.plist */; };
 		60834D77171E8868004943FA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60834D75171E8868004943FA /* MenuViewController.m */; };
 		60834D78171E8868004943FA /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60834D76171E8868004943FA /* MenuViewController.xib */; };
@@ -59,6 +60,7 @@
 		600DBF551718DEE700F15020 /* StackerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerBox.m; sourceTree = "<group>"; };
 		600DBF571718EBCD00F15020 /* StackerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackerView.h; sourceTree = "<group>"; };
 		600DBF581718EBCD00F15020 /* StackerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackerView.m; sourceTree = "<group>"; };
+		604B5F43171FCAC500860F93 /* mcdonalds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mcdonalds.png; sourceTree = "<group>"; };
 		60834D71171E80AF004943FA /* StackerLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StackerLevel.plist; sourceTree = "<group>"; };
 		60834D74171E8868004943FA /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		60834D75171E8868004943FA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		60DD6FA3171FAE5800C4819E /* Gift Card */ = {
 			isa = PBXGroup;
 			children = (
+				604B5F43171FCAC500860F93 /* mcdonalds.png */,
 				60DD6FA4171FAE6E00C4819E /* itunes15.png */,
 				60DD6FA5171FAE6E00C4819E /* itunes25.png */,
 				60DD6FA6171FAE6E00C4819E /* itunes50.png */,
@@ -260,6 +263,7 @@
 				60DD6FA7171FAE6E00C4819E /* itunes15.png in Resources */,
 				60DD6FA8171FAE6E00C4819E /* itunes25.png in Resources */,
 				60DD6FA9171FAE6E00C4819E /* itunes50.png in Resources */,
+				604B5F44171FCAC500860F93 /* mcdonalds.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
