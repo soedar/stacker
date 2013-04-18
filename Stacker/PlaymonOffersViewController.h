@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlaymonOffersViewController : UIViewController
+@interface PlaymonOffersViewController : UIViewController<UIScrollViewDelegate>
 
 @end

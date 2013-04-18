@@ -13,11 +13,13 @@
 + (GiftCard*) giftCardWithImage:(UIImage*)image
                       storeName:(NSString*)storeName
                        distance:(NSString*)distance
-                          title:(NSString*)title;
+                          title:(NSString*)title
+                     coinsValue:(int)coins;
 
 @property (nonatomic, strong, readonly) UIImage *image;
 @property (nonatomic, strong, readonly) NSString *storeName;
 @property (nonatomic, strong, readonly) NSString *distance;
 @property (nonatomic, strong, readonly) NSString *title;
+@property (nonatomic, readonly) int coins;
 
 @end

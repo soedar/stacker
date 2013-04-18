@@ -8,10 +8,14 @@
 
 #import "PlaymonOffersViewController.h"
 #import "Constants.h"
+#import "GiftCard.h"
 
 @interface PlaymonOffersViewController ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *cardScrollView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *headerLabel;
+@property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
 
 @end
 
@@ -30,14 +34,124 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.headerLabel.text = @"Header";
+    self.titleLabel.text = @"Title";
+    
+    NSArray *giftCards = [self getGiftCards];
+    
+    self.pageControl.pageIndicatorTintColor = PAGE_INDICATOR_COLOR;
+    self.pageControl.currentPageIndicatorTintColor = CURRENT_PAGE_INDICATOR_COLOR;
+    self.pageControl.numberOfPages = giftCards.count;
+    [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
+    
+    self.cardScrollView.delegate = self;
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = BACKGROUND_COLOR;
+    [self setupScrollViewWithCards:giftCards];
+    [self updateLabelsForPage:0];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) setupScrollViewWithCards:(NSArray*)giftCards
+{
+    for (int i=0;i<giftCards.count;i++) {
+        GiftCard *giftCard = giftCards[i];
+        
+        CGSize frameSize = self.cardScrollView.bounds.size;
+        CGFloat xOrigin = (frameSize.width) * i;
+        CGRect frame = CGRectMake(xOrigin, 0, frameSize.width, frameSize.height);
+        
+        UIView *view = [[UIView alloc] initWithFrame:frame];
+        
+        CGRect buttonFrame = CGRectMake(0,0,230,150);
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = buttonFrame;
+        button.tag = i;
+        [button setImage:giftCard.image forState:UIControlStateNormal];
+        [view addSubview:button];
+        
+        button.center = CGPointMake(frameSize.width/2, button.center.y);
+        
+        [self.cardScrollView addSubview:view];
+        xOrigin += frame.size.width;
+    }
+    CGSize size = self.cardScrollView.frame.size;
+    size.width *= giftCards.count;
+    self.cardScrollView.contentSize = size;
+}
+
+- (void) updateLabelsForPage:(int)page
+{
+    GiftCard *giftCard = [self getGiftCards][page];
+    
+    NSString *header = giftCard.storeName;
+    if (giftCard.distance) {
+        header = [NSString stringWithFormat:@"%@, %@", header, giftCard.distance];
+    }
+    
+    self.headerLabel.text = header;
+    self.titleLabel.text = giftCard.title;
+/*
+    [self.titleLabel sizeToFit];
+    CGPoint center = self.titleLabel.center;
+    center.x = self.view.center.x;
+    self.titleLabel.center = center;
+ */
+}
+
+#pragma mark - Scroll View Delegate
+
+- (void) scrollViewStopped
+{
+    [self updateLabelsForPage:self.pageControl.currentPage];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.headerLabel.alpha = 1;
+        self.titleLabel.alpha = 1;
+    }];
+}
+
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.headerLabel.alpha = 0;
+        self.titleLabel.alpha = 0;
+    }];
+    
+    CGFloat pageWidth = scrollView.frame.size.width;
+    int page = floor((scrollView.contentOffset.x - pageWidth
+                      / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self scrollViewStopped];
+}
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self scrollViewStopped];
+}
+
+#pragma mark - PageControl Callback
+
+- (void) changePage:(UIPageControl*)pageControl
+{
+    CGFloat xOffset = pageControl.currentPage * self.cardScrollView.frame.size.width;
+    [self.cardScrollView setContentOffset:CGPointMake(xOffset,0) animated:YES];
+}
+
+#pragma mark - Data
+- (NSArray*) getGiftCards
+{
+    GiftCard *appleOne = [GiftCard giftCardWithImage:[UIImage imageNamed:@"itunes15.png"] storeName:@"Apple" distance:nil title:@"Get 3 coins when you buy $15 gift card" coinsValue:3];
+    GiftCard *appleTwo = [GiftCard giftCardWithImage:[UIImage imageNamed:@"itunes25.png"] storeName:@"Apple" distance:nil title:@"Get 6 coins when you buy $25 gift card" coinsValue:6];
+    GiftCard *appleThree = [GiftCard giftCardWithImage:[UIImage imageNamed:@"itunes50.png"] storeName:@"Apple" distance:nil title:@"Get 10 coins when you buy $50 gift card" coinsValue:6];
+    return [NSArray arrayWithObjects:appleOne, appleTwo, appleThree, nil];
 }
 
 @end
