@@ -35,7 +35,7 @@
     self = [self initWithFrame:BOX_FRAME_IPHONE];
     if (self) {
         self.highlightColor = highlightColor;
-        self.passiveColor = [UIColor lightGrayColor];
+        self.passiveColor = BOX_PASSIVE_COLOR;
         
         [self setupBoxView];
     }

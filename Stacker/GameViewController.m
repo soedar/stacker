@@ -40,6 +40,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.coins = INITIAL_COINS;
+    self.view.backgroundColor = BACKGROUND_COLOR;
     
     [self initStackerView];
     self.stopButton.hidden = YES;
@@ -80,7 +81,7 @@
 - (void) setCoins:(int)coins
 {
     _coins = coins;
-    self.coinsLabel.text = [NSString stringWithFormat:@"x %i", coins];
+    self.coinsLabel.text = [NSString stringWithFormat:@"x%i", coins];
 }
 
 #pragma mark - Alert views

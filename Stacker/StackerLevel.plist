@@ -42,13 +42,13 @@
 		<key>highlightCount</key>
 		<integer>1</integer>
 		<key>cycleTime</key>
-		<real>0.1</real>
+		<real>0.05</real>
 	</dict>
 	<dict>
 		<key>highlightCount</key>
 		<integer>1</integer>
 		<key>cycleTime</key>
-		<real>0.1</real>
+		<real>0.01</real>
 	</dict>
 </array>
 </plist>

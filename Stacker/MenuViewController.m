@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "GameViewController.h"
+#import "Constants.h"
 
 @interface MenuViewController ()
 
@@ -28,6 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = BACKGROUND_COLOR;
 }
 
 - (void)didReceiveMemoryWarning

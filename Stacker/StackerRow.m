@@ -58,7 +58,7 @@
     NSMutableArray *boxes = [NSMutableArray array];
     CGFloat xOffset = 0;
     for (int i=0;i<COLUMN_COUNT;i++) {
-        StackerBox *box = [[StackerBox alloc] initWithHighlightColor:[UIColor blueColor]];
+        StackerBox *box = [[StackerBox alloc] initWithHighlightColor:BOX_HIGHLIGHT_COLOR];
         [boxes addObject:box];
         [self addSubview:box];
         
