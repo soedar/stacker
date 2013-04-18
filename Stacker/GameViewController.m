@@ -47,6 +47,8 @@
     [self setupStopButton];
     self.stopButton.hidden = YES;
     
+    
+    [self registerNotifications];
     /*
     [UIView animateWithDuration:0.3
                           delay:0
@@ -91,6 +93,17 @@
 {
     _coins = coins;
     self.coinsLabel.text = [NSString stringWithFormat:@"x%i", coins];
+}
+
+- (void) registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMoreCoins:) name:NOTIFICATION_ADD_COINS object:nil];
+}
+
+- (void) addMoreCoins:(NSNotification*)notification
+{
+    NSNumber *coins = notification.userInfo[COINS_KEY];
+    self.coins += [coins intValue];
 }
 
 #pragma mark - Alert views

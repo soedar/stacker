@@ -51,6 +51,10 @@
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Checkout Complete!" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alertView show];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    NSNumber *coins = @(self.giftCard.coins);
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ADD_COINS object:self userInfo:@{COINS_KEY: coins}];
 }
 
 @end

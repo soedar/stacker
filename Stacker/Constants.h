@@ -25,4 +25,9 @@
 
 #define CURRENT_PAGE_INDICATOR_COLOR  [UIColor colorWithRed:247/255.0 green:120/255.0 blue:37/255.0 alpha:1.0]
 #define PAGE_INDICATOR_COLOR  [UIColor colorWithRed:247/255.0 green:120/255.0 blue:37/255.0 alpha:0.5]
+
+
+
+#define NOTIFICATION_ADD_COINS  @"Add Coins"
+#define COINS_KEY               @"Coins"
 #endif
