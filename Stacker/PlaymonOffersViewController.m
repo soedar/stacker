@@ -174,7 +174,7 @@
                             storeName:@"Amazon"
                             distance:nil
                             title:@"Get 4 coins when you buy a $20 gift card"
-                            coinsValue:3
+                            coinsValue:4
                             cardValue:20];
     
     GiftCard *mcdonaldsCard = [GiftCard
