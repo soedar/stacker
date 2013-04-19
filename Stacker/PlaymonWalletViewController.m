@@ -7,6 +7,7 @@
 //
 
 #import "PlaymonWalletViewController.h"
+#import "Constants.h"
 
 @interface PlaymonWalletViewController ()
 
@@ -20,6 +21,7 @@
     if (self) {
         // Custom initialization
         self.title = @"Wallet";
+        self.view.backgroundColor = BACKGROUND_COLOR;
     }
     return self;
 }
@@ -34,6 +36,35 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - UITableView delegate and data source
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellReuseId = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellReuseId];
+    }
+    
+    cell.textLabel.text = @"helo";
+    cell.textLabel.textColor = TEXT_COLOR;
+    cell.detailTextLabel.text = @"hello";
+    cell.textLabel.textColor = TEXT_COLOR;
+    
+    return cell;
+}
+
+- (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Your Purchases";
 }
 
 @end

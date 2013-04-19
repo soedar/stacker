@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlaymonWalletViewController : UIViewController
+@interface PlaymonWalletViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end
