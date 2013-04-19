@@ -29,6 +29,8 @@
 
 
 
-#define NOTIFICATION_ADD_COINS  @"Add Coins"
+#define NOTIFY_ADD_COINS        @"Add Coins"
+#define NOTIFY_ADD_CARD         @"Add Card"
 #define COINS_KEY               @"Coins"
+#define CARD_KEY                @"Card"
 #endif

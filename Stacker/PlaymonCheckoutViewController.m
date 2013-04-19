@@ -75,7 +75,8 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     NSNumber *coins = @(self.giftCard.coins);
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ADD_COINS object:self userInfo:@{COINS_KEY: coins}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_ADD_COINS object:self userInfo:@{COINS_KEY: coins}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_ADD_CARD object:self userInfo:@{CARD_KEY: self.giftCard}];
 }
 
 @end

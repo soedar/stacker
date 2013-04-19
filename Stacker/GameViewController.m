@@ -102,7 +102,7 @@
 
 - (void) registerNotifications
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMoreCoins:) name:NOTIFICATION_ADD_COINS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMoreCoins:) name:NOTIFY_ADD_COINS object:nil];
 }
 
 - (void) addMoreCoins:(NSNotification*)notification
