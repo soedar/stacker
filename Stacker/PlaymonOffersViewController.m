@@ -77,7 +77,7 @@
         [button setImage:giftCard.image forState:UIControlStateNormal];
         [view addSubview:button];
         
-        button.center = CGPointMake(frameSize.width/2, button.center.y);
+        button.center = CGPointMake(frameSize.width/2, (frameSize.height/5)*3);
         
         [self.cardScrollView addSubview:view];
         xOrigin += frame.size.width;
