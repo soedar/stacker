@@ -9,8 +9,12 @@
 #import "MenuViewController.h"
 #import "GameViewController.h"
 #import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MenuViewController ()
+
+@property (nonatomic, weak) IBOutlet UIButton *playButton;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -30,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = BACKGROUND_COLOR;
+    [self setupPlayButton];
+    self.titleLabel.textColor = TEXT_COLOR;
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +44,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void) setupPlayButton
+{
+    self.playButton.backgroundColor = BUTTON_BACKGROUND_COLOR;
+    self.playButton.layer.masksToBounds = YES;
+    self.playButton.layer.cornerRadius = 8.0f;
+    
+    [self.playButton setTitle:@"Play" forState:UIControlStateNormal];
+    [self.playButton setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
+}
+
+
 #pragma mark - Button action
 
 - (IBAction)playPressed:(id)sender
@@ -45,5 +63,7 @@
     GameViewController *gameViewController = [[GameViewController alloc] init];
     [self presentViewController:gameViewController animated:YES completion:nil];
 }
+
+
 
 @end

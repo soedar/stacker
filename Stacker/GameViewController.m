@@ -47,6 +47,7 @@
     [self setupStopButton];
     self.stopButton.hidden = YES;
     
+    self.coinsLabel.textColor = TEXT_COLOR;
     
     [self registerNotifications];
     /*
@@ -87,6 +88,9 @@
     self.stopButton.backgroundColor = BUTTON_BACKGROUND_COLOR;
     self.stopButton.layer.masksToBounds = YES;
     self.stopButton.layer.cornerRadius = 8.0f;
+    
+    [self.stopButton setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
+    [self.stopButton setTitle:@"STOP!" forState:UIControlStateNormal];
 }
 
 - (void) setCoins:(int)coins
@@ -151,6 +155,7 @@
     
     PlaymonWalletViewController *walletController = [[PlaymonWalletViewController alloc] init];
     UINavigationController *walletNavController = [[UINavigationController alloc] initWithRootViewController:walletController];
+    walletNavController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
     
     offersController.navigationItem.leftBarButtonItem = backButton;
     walletController.navigationItem.leftBarButtonItem = backButton;
