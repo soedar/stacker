@@ -51,8 +51,8 @@
     self.playButton.layer.masksToBounds = YES;
     self.playButton.layer.cornerRadius = 8.0f;
     
-    [self.playButton setTitle:@"Play" forState:UIControlStateNormal];
-    [self.playButton setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
+    [self.playButton setTitle:@"PLAY" forState:UIControlStateNormal];
+    [self.playButton setTitleColor:BUTTON_TEXT_COLOR forState:UIControlStateNormal];
 }
 
 

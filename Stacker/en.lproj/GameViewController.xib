@@ -99,7 +99,7 @@
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="242791464">
+						<object class="NSFont" key="IBUIFont" id="263465476">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
@@ -171,13 +171,13 @@
 						<int key="IBUINumberOfLines">2</int>
 						<int key="IBUITextAlignment">1</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<string key="name">Copperplate</string>
+							<string key="name">Copperplate-Bold</string>
 							<string key="family">Copperplate</string>
-							<int key="traits">0</int>
+							<int key="traits">2</int>
 							<double key="pointSize">17</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Copperplate</string>
+							<string key="NSName">Copperplate-Bold</string>
 							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -207,7 +207,7 @@
 							<string key="NSResourceName">lightbulb.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="715558735"/>
-						<reference key="IBUIFont" ref="242791464"/>
+						<reference key="IBUIFont" ref="263465476"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 548}}</string>

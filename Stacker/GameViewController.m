@@ -48,6 +48,7 @@
     self.stopButton.hidden = YES;
     
     self.coinsLabel.textColor = TEXT_COLOR;
+    self.resetLabel.textColor = TEXT_COLOR;
     
     [self registerNotifications];
     /*
@@ -89,7 +90,7 @@
     self.stopButton.layer.masksToBounds = YES;
     self.stopButton.layer.cornerRadius = 8.0f;
     
-    [self.stopButton setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
+    [self.stopButton setTitleColor:BUTTON_TEXT_COLOR forState:UIControlStateNormal];
     [self.stopButton setTitle:@"STOP!" forState:UIControlStateNormal];
 }
 
