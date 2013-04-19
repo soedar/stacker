@@ -15,8 +15,14 @@
                        distance:(NSString *)distance
                           title:(NSString *)title
                      coinsValue:(int)coins
+                      cardValue:(int)cardValue
 {
-    GiftCard *giftCard = [[GiftCard alloc] initWithImage:image storeName:storeName distance:distance title:title coinsValue:coins];
+    GiftCard *giftCard = [[GiftCard alloc] initWithImage:image
+                                               storeName:storeName
+                                                distance:distance
+                                                   title:title
+                                              coinsValue:coins
+                                               cardValue:cardValue];
     return giftCard;
 }
 
@@ -25,6 +31,7 @@
             distance:(NSString*)distance
                title:(NSString*)title
           coinsValue:(int)coins
+           cardValue:(int)cardValue
 {
     self = [super init];
     if (self) {
@@ -33,6 +40,7 @@
         _distance = distance;
         _title = title;
         _coins = coins;
+        _cardValue = cardValue;
     }
     return self;
 }

@@ -161,9 +161,30 @@
 #pragma mark - Data
 - (NSArray*) getGiftCards
 {
-    GiftCard *appleCard = [GiftCard giftCardWithImage:[UIImage imageNamed:@"itunes15.png"] storeName:@"Apple" distance:nil title:@"Get 3 coins when you buy a $15 gift card" coinsValue:3];
-    GiftCard *amazonCard = [GiftCard giftCardWithImage:[UIImage imageNamed:@"amazon.png"] storeName:@"Amazon" distance:nil title:@"Get 4 coins when you buy a $20 gift card" coinsValue:3];
-    GiftCard *mcdonaldsCard = [GiftCard giftCardWithImage:[UIImage imageNamed:@"mcdonalds.png"] storeName:@"McDonald's" distance:@"10m away" title:@"Get 3 coins when you buy a $10 gift card" coinsValue:3];
+    GiftCard *appleCard = [GiftCard
+                           giftCardWithImage:[UIImage imageNamed:@"itunes15.png"]
+                           storeName:@"Apple"
+                           distance:nil
+                           title:@"Get 3 coins when you buy a $15 gift card"
+                           coinsValue:3
+                           cardValue:15];
+    
+    GiftCard *amazonCard = [GiftCard
+                            giftCardWithImage:[UIImage imageNamed:@"amazon.png"]
+                            storeName:@"Amazon"
+                            distance:nil
+                            title:@"Get 4 coins when you buy a $20 gift card"
+                            coinsValue:3
+                            cardValue:20];
+    
+    GiftCard *mcdonaldsCard = [GiftCard
+                               giftCardWithImage:[UIImage imageNamed:@"mcdonalds.png"]
+                               storeName:@"McDonald's"
+                               distance:@"10m away"
+                               title:@"Get 3 coins when you buy a $10 gift card"
+                               coinsValue:3
+                               cardValue:10];
+    
     return [NSArray arrayWithObjects:appleCard, amazonCard, mcdonaldsCard, nil];
 }
 
