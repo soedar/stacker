@@ -98,7 +98,7 @@
     GiftCard *card = [[self.giftCards reverseObjectEnumerator] allObjects][indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ $%i", card.storeName, card.cardValue];
     cell.textLabel.textColor = TEXT_COLOR;
-    cell.detailTextLabel.text = @"hello";
+    cell.detailTextLabel.text = [self cardCode];
     cell.textLabel.textColor = TEXT_COLOR;
     
     return cell;
@@ -107,6 +107,23 @@
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return @"Your Purchases";
+}
+
+- (NSString *)cardCode
+{
+    NSMutableString *cardCode = [NSMutableString string];
+    for (int i=0;i<5;i++) {
+        [cardCode appendFormat:@"%i", [self random4DigitNumber]];
+        if (i < 4) {
+            [cardCode appendString:@"-"];
+        }
+    }
+    return cardCode;
+}
+
+- (int) random4DigitNumber
+{
+    return (int) (arc4random() % 10000);
 }
 
 @end

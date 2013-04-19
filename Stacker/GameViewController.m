@@ -149,6 +149,10 @@
                                    initWithTitle:@"Back"
                                    style:UIBarButtonItemStyleBordered
                                    target:self action:@selector(dismissPlaymonViewController)];
+    UIBarButtonItem *backButton2 = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Back"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self action:@selector(dismissPlaymonViewController)];
     
     PlaymonOffersViewController *offersController = [[PlaymonOffersViewController alloc] init];
     UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
@@ -159,7 +163,7 @@
     walletNavController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
     
     offersController.navigationItem.leftBarButtonItem = backButton;
-    walletController.navigationItem.leftBarButtonItem = backButton;
+    walletController.navigationItem.leftBarButtonItem = backButton2;
     
     NSArray *tabViewControllers = [[NSArray alloc] initWithObjects:offersNavController, walletNavController, nil];
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
