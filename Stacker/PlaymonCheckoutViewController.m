@@ -8,8 +8,13 @@
 
 #import "PlaymonCheckoutViewController.h"
 #import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PlaymonCheckoutViewController ()
+
+@property (nonatomic, weak) IBOutlet UIButton *checkoutButton;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *creditCardLabel;
 
 @end
 
@@ -39,7 +44,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = BACKGROUND_COLOR;
+    
+    self.creditCardLabel.textColor = TEXT_COLOR;
+    self.nameLabel.textColor = TEXT_COLOR;
+    
+    [self setupCheckoutButton];
 }
+
+- (void) setupCheckoutButton
+{
+    self.checkoutButton.backgroundColor = BUTTON_BACKGROUND_COLOR;
+    self.checkoutButton.layer.masksToBounds = YES;
+    self.checkoutButton.layer.cornerRadius = 8.0f;
+    
+    [self.checkoutButton setTitle:@"CHECKOUT" forState:UIControlStateNormal];
+    [self.checkoutButton setTitleColor:BUTTON_TEXT_COLOR forState:UIControlStateNormal];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
