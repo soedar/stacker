@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CATEGORIES</key>
+	<array>
+		<string>Popular Deals</string>
+		<string>Food</string>
+		<string>Fashion</string>
+		<string>Lifestyle</string>
+	</array>
+	<key>Popular Deals</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Safeway Prepaid value</string>
+			<key>Life</key>
+			<integer>2</integer>
+			<key>Cost</key>
+			<integer>15</integer>
+			<key>Description</key>
+			<string>The Safeway Prepaid Value allows you to deduct from your next Safeway grocery bill. Safeway is the second largest supermarket chain in North America, with over 1700 stores nation wide.</string>
+			<key>ImageName</key>
+			<string>safeway.png</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Amazon Gift Card</string>
+			<key>Life</key>
+			<integer>1</integer>
+			<key>Cost</key>
+			<integer>10</integer>
+			<key>Description</key>
+			<string>On purchase, an Amazon Gift Card will be sent to your email which can be used to purchase anything from amazon.com. Amazon.com is the world&apos;s largest online retailer of books, movies, music and games along with electronics, toys, apparel, sports, tools, groceries and general home and garden items. </string>
+			<key>ImageName</key>
+			<string>amazon.png</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>McDonald&apos;s Prepaid</string>
+			<key>Life</key>
+			<integer>1</integer>
+			<key>Cost</key>
+			<integer>10</integer>
+			<key>Description</key>
+			<string>McDonald&apos;s Prepaid can be used to purchase from any MacDonald&apos;s outlets nation wide. McDonald&apos;s Corporation is the world&apos;s largest chain of hamburger fast food restaurants, serving around 68 million customers daily in 119 countries.</string>
+			<key>ImageName</key>
+			<string>mcdonalds.png</string>
+		</dict>
+	</array>
+	<key>Food</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Alexander&apos;s Steakhouse</string>
+			<key>Life</key>
+			<integer>4</integer>
+			<key>Cost</key>
+			<integer>20</integer>
+			<key>Description</key>
+			<string>Alexander&apos;s Steakhouse is a one Michelin Star fine dining interpretation of the classic American steakhouse with hints of Japanese influence laced into the menu.</string>
+			<key>ImageName</key>
+			<string>alexanders-steakhouse.png</string>
+			<key>Category</key>
+			<array>
+				<integer>1</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Parcel 104</string>
+			<key>Life</key>
+			<integer>6</integer>
+			<key>Cost</key>
+			<integer>25</integer>
+			<key>Description</key>
+			<string>Parcel 104 is a venture of renowned Chef Bradley Ogden. The American-themed menu celebrates seasonal delights and showcases the finest efforts of local growers, ranches and dairies.</string>
+			<key>ImageName</key>
+			<string>parcel-104.png</string>
+			<key>Category</key>
+			<array>
+				<integer>1</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Le Papillon</string>
+			<key>Life</key>
+			<integer>5</integer>
+			<key>Cost</key>
+			<integer>40</integer>
+			<key>Description</key>
+			<string>Le Papillon is a French restaurant located in San Jose, California. Le Papillon specializes in contemporary French cuisine</string>
+			<key>ImageName</key>
+			<string>le-papillon.png</string>
+			<key>Category</key>
+			<array>
+				<integer>1</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Sawa Sushi</string>
+			<key>Life</key>
+			<integer>10</integer>
+			<key>Cost</key>
+			<integer>50</integer>
+			<key>Description</key>
+			<string>Sawa Sushi is serves authentic Japanese cuisines and is one of Forbes Top 100 Restaurants.</string>
+			<key>ImageName</key>
+			<string>sawa-sushi.png</string>
+			<key>Category</key>
+			<array>
+				<integer>1</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Tarragon Restaurant</string>
+			<key>Life</key>
+			<integer>5</integer>
+			<key>Cost</key>
+			<integer>20</integer>
+			<key>Description</key>
+			<string>American (new) cuisine in a masterful all custom wood, custom lighting, walnut floors, large mirror included building.</string>
+			<key>ImageName</key>
+			<string>tarragon-restaurant.png</string>
+			<key>Category</key>
+			<array>
+				<integer>1</integer>
+			</array>
+		</dict>
+	</array>
+	<key>Fashion</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>SWATI Couture Indian Fashions</string>
+			<key>Life</key>
+			<integer>3</integer>
+			<key>Cost</key>
+			<integer>25</integer>
+			<key>Description</key>
+			<string>SWATI specializes in exclusive Indian origin fusions fashions. The fusion of eclectic artistry, in each piece of fashion, that is painstakingly brought forth, with unique individuality, is the trademark of the label.</string>
+			<key>ImageName</key>
+			<string>swati-couture-indian-fashions.png</string>
+			<key>Category</key>
+			<array>
+				<integer>2</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>San Francisco Shirt Company</string>
+			<key>Life</key>
+			<integer>4</integer>
+			<key>Cost</key>
+			<integer>30</integer>
+			<key>Description</key>
+			<string>The San Francisco Shirt Company specializes in  women&apos;s clothing and bridal gowns. The store is a child of wildly successful and famous Men&apos;s Clothing store - Franco Uomo.</string>
+			<key>ImageName</key>
+			<string>san-francisco-shirt-company.png</string>
+			<key>Category</key>
+			<array>
+				<integer>2</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>White House | Black Market</string>
+			<key>Life</key>
+			<integer>5</integer>
+			<key>Cost</key>
+			<integer>24</integer>
+			<key>Description</key>
+			<string>White House | Black Market is an American fashion store targeting women 25 years of age and older. White House | Black Market is known for its sleek lines, and its focus on white, black, and other variants of the two colors.</string>
+			<key>ImageName</key>
+			<string>white-house-black-market.png</string>
+			<key>Category</key>
+			<array>
+				<integer>2</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Aritzia</string>
+			<key>Life</key>
+			<integer>12</integer>
+			<key>Cost</key>
+			<integer>50</integer>
+			<key>Description</key>
+			<string>Aritzia is an innovative Canadian women&apos;s fashion boutique that was started in Vancouver, British Columbia by CEO Brian Hill in 1984. Each season, Aritzia curates a collection of beautifully designed clothes that are on-trend, high quality and good value.</string>
+			<key>ImageName</key>
+			<string>aritzia.png</string>
+			<key>Category</key>
+			<array>
+				<integer>2</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Urban Darling</string>
+			<key>Life</key>
+			<integer>8</integer>
+			<key>Cost</key>
+			<integer>40</integer>
+			<key>Description</key>
+			<string>Personal style comes with understanding your needs and your lifestyle. Having a wardrobe you can count on, and works for you, is important. At Urban Darling, your personal wardrobe stylist will develop what is – and what isn&apos;t - you.</string>
+			<key>ImageName</key>
+			<string>urban-darling.png</string>
+			<key>Category</key>
+			<array>
+				<integer>2</integer>
+			</array>
+		</dict>
+	</array>
+	<key>Lifestyle</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Beauty Fusion Studio</string>
+			<key>Life</key>
+			<integer>7</integer>
+			<key>Cost</key>
+			<integer>31</integer>
+			<key>Description</key>
+			<string>Beauty Fusion Studio is a full service salon with over 20 years of experience in the bay area. Relax in a friendly and cozy atmosphere where you can enjoy being pampered and experience a total makeover from our beauty express. We guarantee that you will be delighted to have come to the right place.</string>
+			<key>ImageName</key>
+			<string>beauty-fusion-salon.png</string>
+			<key>Category</key>
+			<array>
+				<integer>3</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Juran&apos;s Hair Salon</string>
+			<key>Life</key>
+			<integer>20</integer>
+			<key>Cost</key>
+			<integer>55</integer>
+			<key>Description</key>
+			<string>Juran&apos;s Hair Salon is located next to Sunnyvale Caltrain.</string>
+			<key>ImageName</key>
+			<string>jurans-hair-salon.png</string>
+			<key>Category</key>
+			<array>
+				<integer>3</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Sol Tan Salon</string>
+			<key>Life</key>
+			<integer>15</integer>
+			<key>Cost</key>
+			<integer>40</integer>
+			<key>Description</key>
+			<string>Sol Tan is committed to providing you a safe and enjoyable tanning experience. All our beds are completely sanitized between clients using hospital grade cleansers.</string>
+			<key>ImageName</key>
+			<string>sol-tan-salon.png</string>
+			<key>Category</key>
+			<array>
+				<integer>3</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Elements Therapeutic Massage</string>
+			<key>Life</key>
+			<integer>6</integer>
+			<key>Cost</key>
+			<integer>20</integer>
+			<key>Description</key>
+			<string>At every single one of our over 110 locations nationwide the amazing benefits of massage therapy are paired with professional massage therapists, flexible scheduling, affordable prices and outstanding service to create a truly therapeutic experience.</string>
+			<key>ImageName</key>
+			<string>elements-therapeutic-massage.png</string>
+			<key>Category</key>
+			<array>
+				<integer>3</integer>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

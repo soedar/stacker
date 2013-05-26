@@ -20,6 +20,46 @@
 
 @implementation PBDealsViewController
 
++ (NSDictionary*) dealsRowsFromPlist
+{
+    static NSDictionary *finalDealsRows;
+    
+    if (!finalDealsRows) {
+        NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"PlaybulbDeals" ofType:@"plist"];
+        
+        NSDictionary *deals = [NSDictionary dictionaryWithContentsOfFile:dataPath];
+        
+        NSMutableDictionary *dealsRows = [NSMutableDictionary dictionary];
+        for (NSString *category in deals[@"CATEGORIES"]) {
+            NSMutableArray *dealsInfo = [NSMutableArray array];
+            
+            NSArray *dealsDictInfo = deals[category];
+            for (NSDictionary *dealInfo in dealsDictInfo) {
+                PBDeal *deal = [[PBDeal alloc] initWithDictionary:dealInfo];
+                [dealsInfo addObject:deal];
+            }
+            
+            dealsRows[category] = dealsInfo;
+        }
+
+        finalDealsRows = dealsRows;
+    }
+    
+    return finalDealsRows;
+}
+
++ (NSArray*) categoryOrder
+{
+    static NSArray *categoryOrder;
+    if (!categoryOrder) {
+        NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"PlaybulbDeals" ofType:@"plist"];
+        NSDictionary *deals = [NSDictionary dictionaryWithContentsOfFile:dataPath];
+        categoryOrder = deals[@"CATEGORIES"];
+    }
+    
+    return categoryOrder;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,6 +76,8 @@
     // Do any additional setup after loading the view from its nib.
     [self addBackButton];
     [self registerNotification];
+    
+    [PBDealsViewController dealsRowsFromPlist];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +118,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return [PBDealsViewController categoryOrder].count;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,8 +131,14 @@
     
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
    
-    NSArray *deals = @[[PBDeal testDeal], [PBDeal testDeal2], [PBDeal testDeal]];
-    PBDealsRowView *rowView = [PBDealsRowView dealsRowWithHeader:@"Popular Deals" deals:deals];
+    int row = indexPath.row;
+    NSDictionary *dealsRows = [PBDealsViewController dealsRowsFromPlist];
+    NSArray *categories = [PBDealsViewController categoryOrder];
+    
+    NSString *category = categories[row];
+    
+    PBDealsRowView *rowView = [PBDealsRowView dealsRowWithHeader:category
+                                                           deals:dealsRows[category]];
     
     [cell.contentView addSubview:rowView];
     

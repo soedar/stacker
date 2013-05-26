@@ -9,8 +9,6 @@
 #import "GameViewController.h"
 #import "StackerView.h"
 #import "Constants.h"
-#import "PlaymonOffersViewController.h"
-#import "PlaymonWalletViewController.h"
 
 #import "PBDealsViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -152,37 +150,8 @@
     PBDealsViewController *dealsViewController = [[PBDealsViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:dealsViewController];
     navController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
-//    navController.navigationItem.leftBarButtonItem = backButton;
     
     return navController;
-    
-    /*
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Back"
-                                   style:UIBarButtonItemStyleBordered
-                                   target:self action:@selector(dismissPlaymonViewController)];
-    UIBarButtonItem *backButton2 = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Back"
-                                   style:UIBarButtonItemStyleBordered
-                                   target:self action:@selector(dismissPlaymonViewController)];
-    
-    PlaymonOffersViewController *offersController = [[PlaymonOffersViewController alloc] init];
-    UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
-    offersNavController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
-    
-    PlaymonWalletViewController *walletController = [[PlaymonWalletViewController alloc] init];
-    UINavigationController *walletNavController = [[UINavigationController alloc] initWithRootViewController:walletController];
-    walletNavController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
-    
-    offersController.navigationItem.leftBarButtonItem = backButton;
-    walletController.navigationItem.leftBarButtonItem = backButton2;
-    
-    NSArray *tabViewControllers = [[NSArray alloc] initWithObjects:offersNavController, walletNavController, nil];
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:tabViewControllers animated:YES];
-    
-    return tabBarController;
-     */
 }
 
 - (void) dismissPlaymonViewController
