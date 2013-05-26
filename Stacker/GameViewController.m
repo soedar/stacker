@@ -11,6 +11,8 @@
 #import "Constants.h"
 #import "PlaymonOffersViewController.h"
 #import "PlaymonWalletViewController.h"
+
+#import "PBDealsViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface GameViewController () <StackerViewDelegate>
@@ -145,6 +147,16 @@
 
 - (UIViewController *)playmonController
 {
+
+    
+    PBDealsViewController *dealsViewController = [[PBDealsViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:dealsViewController];
+    navController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
+//    navController.navigationItem.leftBarButtonItem = backButton;
+    
+    return navController;
+    
+    /*
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Back"
                                    style:UIBarButtonItemStyleBordered
@@ -170,6 +182,7 @@
     [tabBarController setViewControllers:tabViewControllers animated:YES];
     
     return tabBarController;
+     */
 }
 
 - (void) dismissPlaymonViewController
