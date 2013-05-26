@@ -8,24 +8,38 @@
 
 #import "PBDealView.h"
 
+@interface PBDealView ()
+
+@property (nonatomic, weak) IBOutlet UIButton *button;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *lifeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *costLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+@end
+
 @implementation PBDealView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
++ (id) getViewFromNib {
+    NSString *className = [[self class] description];
+    NSArray *xib = [[NSBundle mainBundle] loadNibNamed:className owner:self options:nil];
+    
+    return xib[0];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
++ (PBDealView*) dealViewForDeal:(PBDeal *)deal target:(id)target action:(SEL)action
 {
-    // Drawing code
+    PBDealView *dealView = [PBDealView getViewFromNib];
+    
+    [dealView.button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    dealView.nameLabel.text = deal.name;
+    dealView.costLabel.text = [NSString stringWithFormat:@"%i", deal.cost];
+    dealView.lifeLabel.text = [NSString stringWithFormat:@"%i", deal.life];
+    dealView.imageView.image = deal.image;
+    
+    return dealView;
 }
-*/
+
 
 @end

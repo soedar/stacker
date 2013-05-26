@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBDeal.h"
 
 @interface PBDealView : UIView
+
++ (PBDealView*) dealViewForDeal:(PBDeal*)deal target:(id)target action:(SEL)action;
 
 @end
