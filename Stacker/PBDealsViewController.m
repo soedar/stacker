@@ -10,6 +10,7 @@
 
 #import "PBDeal.h"
 #import "PBDealsRowView.h"
+#import "PBDealDetailsViewController.h"
 
 @interface PBDealsViewController ()
 
@@ -34,6 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self addBackButton];
+    [self registerNotification];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +51,20 @@
                                    style:UIBarButtonItemStyleBordered
                                    target:self action:@selector(dismissPlaybulbController)];
     self.navigationItem.leftBarButtonItem = backButton;
+}
+
+- (void) registerNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDeal:) name:@"ShowDealDetail" object:nil];
+}
+
+- (void) showDeal:(NSNotification*) notification
+{
+    PBDeal *deal = notification.object;
+    
+    PBDealDetailsViewController *dealDetailVc = [[PBDealDetailsViewController alloc] initWithDeal:deal];
+    
+    [self.navigationController pushViewController:dealDetailVc animated:YES];
 }
 
 - (void) dismissPlaybulbController

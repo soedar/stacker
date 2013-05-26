@@ -42,6 +42,8 @@
 		60DD6FAC171FAEC100C4819E /* GiftCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DD6FAB171FAEC100C4819E /* GiftCard.m */; };
 		60ED7DD61751A07A001F7258 /* PBDealsRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED7DD51751A079001F7258 /* PBDealsRowView.m */; };
 		60ED7DD81751A091001F7258 /* PBDealsRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7DD71751A090001F7258 /* PBDealsRowView.xib */; };
+		60ED7DDC1751AD18001F7258 /* PBDealDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED7DDA1751AD17001F7258 /* PBDealDetailsViewController.m */; };
+		60ED7DDD1751AD18001F7258 /* PBDealDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7DDB1751AD18001F7258 /* PBDealDetailsViewController.xib */; };
 		60F0AEFC17518EC000CFCC21 /* PlaybulbDeals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60F0AEFB17518EC000CFCC21 /* PlaybulbDeals.plist */; };
 		60F0AEFF17518FEC00CFCC21 /* PBDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AEFE17518FEC00CFCC21 /* PBDeal.m */; };
 		60F0AF021751912900CFCC21 /* PBDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AF011751912900CFCC21 /* PBDealView.m */; };
@@ -101,6 +103,9 @@
 		60ED7DD41751A079001F7258 /* PBDealsRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealsRowView.h; sourceTree = "<group>"; };
 		60ED7DD51751A079001F7258 /* PBDealsRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDealsRowView.m; sourceTree = "<group>"; };
 		60ED7DD71751A090001F7258 /* PBDealsRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBDealsRowView.xib; sourceTree = "<group>"; };
+		60ED7DD91751AD17001F7258 /* PBDealDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealDetailsViewController.h; sourceTree = "<group>"; };
+		60ED7DDA1751AD17001F7258 /* PBDealDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDealDetailsViewController.m; sourceTree = "<group>"; };
+		60ED7DDB1751AD18001F7258 /* PBDealDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBDealDetailsViewController.xib; sourceTree = "<group>"; };
 		60F0AEFB17518EC000CFCC21 /* PlaybulbDeals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaybulbDeals.plist; sourceTree = "<group>"; };
 		60F0AEFD17518FEC00CFCC21 /* PBDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDeal.h; sourceTree = "<group>"; };
 		60F0AEFE17518FEC00CFCC21 /* PBDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDeal.m; sourceTree = "<group>"; };
@@ -212,6 +217,9 @@
 				60F0AEFD17518FEC00CFCC21 /* PBDeal.h */,
 				60F0AEFE17518FEC00CFCC21 /* PBDeal.m */,
 				60F0AF001751912800CFCC21 /* PBDealView.h */,
+				60ED7DD91751AD17001F7258 /* PBDealDetailsViewController.h */,
+				60ED7DDA1751AD17001F7258 /* PBDealDetailsViewController.m */,
+				60ED7DDB1751AD18001F7258 /* PBDealDetailsViewController.xib */,
 				60F0AF011751912900CFCC21 /* PBDealView.m */,
 				60F0AF031751913B00CFCC21 /* PBDealView.xib */,
 				60ED7DD41751A079001F7258 /* PBDealsRowView.h */,
@@ -329,6 +337,7 @@
 				60F0AF041751913B00CFCC21 /* PBDealView.xib in Resources */,
 				60F0AF09175191D000CFCC21 /* PBDealsViewController.xib in Resources */,
 				60ED7DD81751A091001F7258 /* PBDealsRowView.xib in Resources */,
+				60ED7DDD1751AD18001F7258 /* PBDealDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +363,7 @@
 				60F0AF021751912900CFCC21 /* PBDealView.m in Sources */,
 				60F0AF08175191D000CFCC21 /* PBDealsViewController.m in Sources */,
 				60ED7DD61751A07A001F7258 /* PBDealsRowView.m in Sources */,
+				60ED7DDC1751AD18001F7258 /* PBDealDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

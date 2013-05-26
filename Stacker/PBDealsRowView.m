@@ -10,6 +10,8 @@
 #import "PBDeal.h"
 #import "PBDealView.h"
 
+#define GAP_SIZE    20
+
 @interface PBDealsRowView ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *dealsScrollView;
@@ -46,10 +48,10 @@
         dealView.frame = dealViewFrame;
         [dealsRow.dealsScrollView addSubview:dealView];
         
-        xOffset += dealViewFrame.size.width + 20;
+        xOffset += dealViewFrame.size.width + GAP_SIZE;
     }
     
-    dealsRow.dealsScrollView.contentSize = CGSizeMake(xOffset, dealsRow.dealsScrollView.frame.size.height);
+    dealsRow.dealsScrollView.contentSize = CGSizeMake(xOffset-GAP_SIZE, dealsRow.dealsScrollView.frame.size.height);
     
     return dealsRow;
 }
@@ -57,6 +59,6 @@
 
 - (void) dealTapped:(UIButton*)button
 {
-    NSLog(@"%i tapped", button.tag);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowDealDetail" object:self.deals[button.tag]];
 }
 @end
