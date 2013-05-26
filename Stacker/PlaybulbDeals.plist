@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Category</key>
+	<array>
+		<string>Popular Deals</string>
+		<string>Food</string>
+		<string>Fashion</string>
+		<string>Lifestyle</string>
+	</array>
+	<key>Deals</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Apple iTunes</string>
+			<key>Life</key>
+			<integer>3</integer>
+			<key>Cost</key>
+			<integer>20</integer>
+			<key>Description</key>
+			<string>Apple iTunes is something something something</string>
+			<key>ImageName</key>
+			<string>appleItunes.png</string>
+			<key>Category</key>
+			<array>
+				<integer>1</integer>
+				<string>2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple iTunes</string>
+			<key>Life</key>
+			<integer>1</integer>
+			<key>Cost</key>
+			<integer>15</integer>
+			<key>Description</key>
+			<string>Apple iTunes is something something something</string>
+			<key>ImageName</key>
+			<string>appleItunes.png</string>
+			<key>Category</key>
+			<array>
+				<integer>1</integer>
+				<string>2</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

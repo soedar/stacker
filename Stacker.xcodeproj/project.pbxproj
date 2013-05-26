@@ -40,6 +40,10 @@
 		60DD6FA8171FAE6E00C4819E /* itunes25.png in Resources */ = {isa = PBXBuildFile; fileRef = 60DD6FA5171FAE6E00C4819E /* itunes25.png */; };
 		60DD6FA9171FAE6E00C4819E /* itunes50.png in Resources */ = {isa = PBXBuildFile; fileRef = 60DD6FA6171FAE6E00C4819E /* itunes50.png */; };
 		60DD6FAC171FAEC100C4819E /* GiftCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DD6FAB171FAEC100C4819E /* GiftCard.m */; };
+		60F0AEFC17518EC000CFCC21 /* PlaybulbDeals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60F0AEFB17518EC000CFCC21 /* PlaybulbDeals.plist */; };
+		60F0AEFF17518FEC00CFCC21 /* PBDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AEFE17518FEC00CFCC21 /* PBDeal.m */; };
+		60F0AF021751912900CFCC21 /* PBDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AF011751912900CFCC21 /* PBDealView.m */; };
+		60F0AF041751913B00CFCC21 /* PBDealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F0AF031751913B00CFCC21 /* PBDealView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,12 @@
 		60DD6FA6171FAE6E00C4819E /* itunes50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itunes50.png; sourceTree = "<group>"; };
 		60DD6FAA171FAEC000C4819E /* GiftCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftCard.h; sourceTree = "<group>"; };
 		60DD6FAB171FAEC100C4819E /* GiftCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftCard.m; sourceTree = "<group>"; };
+		60F0AEFB17518EC000CFCC21 /* PlaybulbDeals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaybulbDeals.plist; sourceTree = "<group>"; };
+		60F0AEFD17518FEC00CFCC21 /* PBDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDeal.h; sourceTree = "<group>"; };
+		60F0AEFE17518FEC00CFCC21 /* PBDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDeal.m; sourceTree = "<group>"; };
+		60F0AF001751912800CFCC21 /* PBDealView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealView.h; sourceTree = "<group>"; };
+		60F0AF011751912900CFCC21 /* PBDealView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDealView.m; sourceTree = "<group>"; };
+		60F0AF031751913B00CFCC21 /* PBDealView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBDealView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,16 +197,13 @@
 		60834D82171E9C2A004943FA /* Playmon */ = {
 			isa = PBXGroup;
 			children = (
-				60DD6FA3171FAE5800C4819E /* Gift Card */,
-				60834D7D171E9C25004943FA /* PlaymonOffersViewController.h */,
-				60834D7E171E9C25004943FA /* PlaymonOffersViewController.m */,
-				60834D7F171E9C25004943FA /* PlaymonOffersViewController.xib */,
-				60834D83171EA3CE004943FA /* PlaymonWalletViewController.h */,
-				60834D84171EA3CE004943FA /* PlaymonWalletViewController.m */,
-				60834D85171EA3CE004943FA /* PlaymonWalletViewController.xib */,
-				604B5F47171FD34600860F93 /* PlaymonCheckoutViewController.h */,
-				604B5F48171FD34600860F93 /* PlaymonCheckoutViewController.m */,
-				604B5F49171FD34600860F93 /* PlaymonCheckoutViewController.xib */,
+				60F0AEFA17518EA100CFCC21 /* Deprecated */,
+				60F0AEFB17518EC000CFCC21 /* PlaybulbDeals.plist */,
+				60F0AEFD17518FEC00CFCC21 /* PBDeal.h */,
+				60F0AEFE17518FEC00CFCC21 /* PBDeal.m */,
+				60F0AF001751912800CFCC21 /* PBDealView.h */,
+				60F0AF011751912900CFCC21 /* PBDealView.m */,
+				60F0AF031751913B00CFCC21 /* PBDealView.xib */,
 			);
 			name = Playmon;
 			sourceTree = "<group>";
@@ -213,6 +220,23 @@
 				60DD6FA6171FAE6E00C4819E /* itunes50.png */,
 			);
 			name = "Gift Card";
+			sourceTree = "<group>";
+		};
+		60F0AEFA17518EA100CFCC21 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				60DD6FA3171FAE5800C4819E /* Gift Card */,
+				60834D7D171E9C25004943FA /* PlaymonOffersViewController.h */,
+				60834D7E171E9C25004943FA /* PlaymonOffersViewController.m */,
+				60834D7F171E9C25004943FA /* PlaymonOffersViewController.xib */,
+				60834D83171EA3CE004943FA /* PlaymonWalletViewController.h */,
+				60834D84171EA3CE004943FA /* PlaymonWalletViewController.m */,
+				60834D85171EA3CE004943FA /* PlaymonWalletViewController.xib */,
+				604B5F47171FD34600860F93 /* PlaymonCheckoutViewController.h */,
+				604B5F48171FD34600860F93 /* PlaymonCheckoutViewController.m */,
+				604B5F49171FD34600860F93 /* PlaymonCheckoutViewController.xib */,
+			);
+			name = Deprecated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +309,8 @@
 				604B5F4B171FD34600860F93 /* PlaymonCheckoutViewController.xib in Resources */,
 				6071F9901720FC38008A1DAE /* Icon.png in Resources */,
 				6071F9921720FC8B008A1DAE /* Icon-s.png in Resources */,
+				60F0AEFC17518EC000CFCC21 /* PlaybulbDeals.plist in Resources */,
+				60F0AF041751913B00CFCC21 /* PBDealView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +332,8 @@
 				60834D86171EA3CE004943FA /* PlaymonWalletViewController.m in Sources */,
 				60DD6FAC171FAEC100C4819E /* GiftCard.m in Sources */,
 				604B5F4A171FD34600860F93 /* PlaymonCheckoutViewController.m in Sources */,
+				60F0AEFF17518FEC00CFCC21 /* PBDeal.m in Sources */,
+				60F0AF021751912900CFCC21 /* PBDealView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
