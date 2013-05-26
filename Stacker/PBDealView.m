@@ -30,6 +30,7 @@
 + (PBDealView*) dealViewForDeal:(PBDeal *)deal target:(id)target action:(SEL)action
 {
     PBDealView *dealView = [PBDealView getViewFromNib];
+    dealView.frame = CGRectMake(0, 0, 260, 160);
     
     [dealView.button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     

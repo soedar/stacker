@@ -8,6 +8,9 @@
 
 #import "PBDealsViewController.h"
 
+#import "PBDeal.h"
+#import "PBDealView.h"
+
 @interface PBDealsViewController ()
 
 @property (nonatomic, weak) IBOutlet UITableView *dealsTableView;
@@ -55,14 +58,14 @@
 
 #pragma mark - UITableView datasource and delegate
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 150;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 160;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 2;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,6 +75,17 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    
+    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    PBDeal *deal = [PBDeal testDeal];
+    if (indexPath.row % 2 == 0) {
+        deal = [PBDeal testDeal2];
+    }
+    PBDealView *dealView = [PBDealView dealViewForDeal:deal target:nil action:NULL];
+    
+    [cell.contentView addSubview:dealView];
+    
     return cell;
 }
 

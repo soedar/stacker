@@ -18,4 +18,7 @@
 
 - (PBDeal*) initWithDictionary:(NSDictionary*)dealDictionary;
 
++ (PBDeal*) testDeal;
++ (PBDeal*) testDeal2;
+
 @end

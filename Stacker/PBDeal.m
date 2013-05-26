@@ -23,4 +23,26 @@
     return self;
 }
 
++ (PBDeal*) testDeal
+{
+    NSDictionary *testDict = @{@"Name": @"Apple iTunes X",
+                               @"Life": @(3),
+                               @"Cost": @(20),
+                               @"Description": @"Apple iTunes is a entertainment thingy",
+                               @"ImageName": @"itunes15.png"};
+    
+    return [[PBDeal alloc] initWithDictionary:testDict];
+}
+
++ (PBDeal*) testDeal2
+{
+    NSDictionary *testDict = @{@"Name": @"Apple iTunes X",
+                               @"Life": @(3),
+                               @"Cost": @(20),
+                               @"Description": @"Apple iTunes is a entertainment thingy",
+                               @"ImageName": @"itunes25.png"};
+    
+    return [[PBDeal alloc] initWithDictionary:testDict];
+}
+
 @end
