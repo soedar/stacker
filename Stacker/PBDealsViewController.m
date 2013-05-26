@@ -9,7 +9,7 @@
 #import "PBDealsViewController.h"
 
 #import "PBDeal.h"
-#import "PBDealView.h"
+#import "PBDealsRowView.h"
 
 @interface PBDealsViewController ()
 
@@ -60,7 +60,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 4;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,14 +72,11 @@
     }
     
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+   
+    NSArray *deals = @[[PBDeal testDeal], [PBDeal testDeal2], [PBDeal testDeal]];
+    PBDealsRowView *rowView = [PBDealsRowView dealsRowWithHeader:@"Popular Deals" deals:deals];
     
-    PBDeal *deal = [PBDeal testDeal];
-    if (indexPath.row % 2 == 0) {
-        deal = [PBDeal testDeal2];
-    }
-    PBDealView *dealView = [PBDealView dealViewForDeal:deal target:nil action:NULL];
-    
-    [cell.contentView addSubview:dealView];
+    [cell.contentView addSubview:rowView];
     
     return cell;
 }

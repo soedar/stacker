@@ -13,4 +13,6 @@
 
 + (PBDealView*) dealViewForDeal:(PBDeal*)deal target:(id)target action:(SEL)action;
 
+- (UIButton*) button;
+
 @end
