@@ -7,6 +7,7 @@
 //
 
 #import "PBDealCheckoutViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PBDealCheckoutViewController ()
 
@@ -26,6 +27,7 @@
 @property (nonatomic, strong) UITextField *csvTextField;
 @property (nonatomic, strong) UITextField *expiryTextField;
 
+@property (nonatomic, strong) UIButton *purchaseButton;
 
 @end
 
@@ -50,7 +52,6 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue.png"]];
     
     [self updateDealInformation];
-    [self addPurchaseButton];
     [self setupTextFields];
     
     // Listen for keyboard appearances and disappearances
@@ -64,7 +65,11 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
-    
+    self.purchaseButton = [self getPurchaseButton];
+    CGRect frame = self.purchaseButton.frame;
+    frame.origin.y = self.checkoutTableView.frame.origin.y + self.checkoutTableView.frame.size.height + 20;
+    self.purchaseButton.frame = frame;
+    [self.view addSubview:self.purchaseButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +83,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.descriptionView.transform = CGAffineTransformMakeTranslation(0, -80);
         self.checkoutTableView.transform = CGAffineTransformMakeTranslation(0, -80);
+        self.purchaseButton.transform = CGAffineTransformMakeTranslation(0, -80);
     }];
 }
 
@@ -86,14 +92,8 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.descriptionView.transform = CGAffineTransformIdentity;
         self.checkoutTableView.transform = CGAffineTransformIdentity;
+        self.purchaseButton.transform = CGAffineTransformIdentity;
     }];
-}
-
-- (void) addPurchaseButton
-{
-    NSString *costTitle = [NSString stringWithFormat:@"Checkout"];
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:costTitle style:UIBarButtonItemStyleBordered target:self action:@selector(purchaseItem)];
-    self.navigationItem.rightBarButtonItem = barButtonItem;
 }
 
 - (void) purchaseItem
@@ -103,6 +103,15 @@
     for (UITextField *textField in textFields) {
         [textField resignFirstResponder];
         [textField setEnabled:NO];
+    }
+}
+
+- (IBAction)resignTextFieldResponders:(id)sender
+{
+    NSArray *textFields = @[self.emailTextField, self.creditCardTextField, self.csvTextField, self.nameTextField, self.expiryTextField];
+    
+    for (UITextField *textField in textFields) {
+        [textField resignFirstResponder];
     }
 }
 
@@ -188,5 +197,47 @@
 }
 
 
+- (UIButton *) getPurchaseButton
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 130, 40);
+    
+    btn.center = CGPointMake(160, btn.center.y);
+    
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    
+    // Set default backgrond color
+    [btn setBackgroundColor:[UIColor blueColor]];
+    
+    // Add Custom Font
+    NSString *titleString = [NSString stringWithFormat:@"Buy for $%i", self.deal.cost];
+    [btn setTitle:titleString forState:UIControlStateNormal];
+    
+    // Draw a custom gradient
+    CAGradientLayer *btnGradient = [CAGradientLayer layer];
+    btnGradient.frame = btn.bounds;
+    btnGradient.colors = [NSArray arrayWithObjects:
+                          (id)[[UIColor colorWithRed:105.0f / 255.0f green:188.0f / 255.0f blue:235.0f / 255.0f alpha:1.0f] CGColor],
+                          (id)[[UIColor colorWithRed:10.0f / 255.0f green:144.0f / 255.0f blue:222.0f / 255.0f alpha:1.0f] CGColor],
+                          nil];
+    
+    [btn.layer insertSublayer:btnGradient atIndex:0];
+    
+    
+    // Round button corners
+    CALayer *btnLayer = [btn layer];
+    [btnLayer setMasksToBounds:YES];
+    [btnLayer setCornerRadius:5.0f];
+    
+    
+    // Apply a 1 pixel border around Buy Button
+    [btnLayer setBorderWidth:1.0f];
+    [btnLayer setBorderColor:[[UIColor colorWithRed:10.0f / 255.0f green:144.0f / 255.0f blue:222.0f / 255.0f alpha:1.0f] CGColor]];
+    
+    [btn addTarget:self action:@selector(purchaseItem) forControlEvents:UIControlEventTouchUpInside];
+    
+    return btn;
+}
 
 @end

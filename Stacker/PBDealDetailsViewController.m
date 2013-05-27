@@ -8,6 +8,7 @@
 
 #import "PBDealDetailsViewController.h"
 #import "PBDealCheckoutViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define CONTENT_PADDING     20;
 
@@ -20,6 +21,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *purchaseInfoLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionNameLabel;
+
 
 @end
 
@@ -41,10 +43,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
    
-    [self addPurchaseButton];
     
     [self appendViewToContentView:[self viewForImage]];
     [self appendViewToContentView:[self viewForDescription]];
+    [self appendViewToContentView:[self viewForPurchaseButton]];
     
     [self.scrollView addSubview:self.contentView];
     self.scrollView.contentSize = self.contentView.frame.size;
@@ -84,11 +86,47 @@
 
 #pragma mark - Sections of view
 
-- (void) addPurchaseButton
+- (UIView*) viewForPurchaseButton
 {
-    NSString *costTitle = [NSString stringWithFormat:@"$%i", self.deal.cost];
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:costTitle style:UIBarButtonItemStyleBordered target:self action:@selector(purchaseItem)];
-    self.navigationItem.rightBarButtonItem = barButtonItem;
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 130, 40);
+    
+    btn.center = CGPointMake(160, btn.center.y);
+    
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+   
+    // Set default backgrond color
+    [btn setBackgroundColor:[UIColor blueColor]];
+    
+    // Add Custom Font
+    NSString *titleString = [NSString stringWithFormat:@"Buy for $%i", self.deal.cost];
+    [btn setTitle:titleString forState:UIControlStateNormal];
+    
+    // Draw a custom gradient
+    CAGradientLayer *btnGradient = [CAGradientLayer layer];
+    btnGradient.frame = btn.bounds;
+    btnGradient.colors = [NSArray arrayWithObjects:
+                          (id)[[UIColor colorWithRed:105.0f / 255.0f green:188.0f / 255.0f blue:235.0f / 255.0f alpha:1.0f] CGColor],
+                          (id)[[UIColor colorWithRed:10.0f / 255.0f green:144.0f / 255.0f blue:222.0f / 255.0f alpha:1.0f] CGColor],
+                          nil];
+    
+    [btn.layer insertSublayer:btnGradient atIndex:0];
+    
+    
+    // Round button corners
+    CALayer *btnLayer = [btn layer];
+    [btnLayer setMasksToBounds:YES];
+    [btnLayer setCornerRadius:5.0f];
+    
+    
+    // Apply a 1 pixel border around Buy Button
+    [btnLayer setBorderWidth:1.0f];
+    [btnLayer setBorderColor:[[UIColor colorWithRed:10.0f / 255.0f green:144.0f / 255.0f blue:222.0f / 255.0f alpha:1.0f] CGColor]];
+    
+    [btn addTarget:self action:@selector(purchaseItem) forControlEvents:UIControlEventTouchUpInside];
+    
+    return btn;
 }
 
 - (UIView *) viewForImage

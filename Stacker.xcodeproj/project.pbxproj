@@ -54,6 +54,7 @@
 		60ED7E2817540489001F7258 /* navy_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E2717540488001F7258 /* navy_blue.png */; };
 		60ED7E3117540A38001F7258 /* PBDealCheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED7E2F17540A37001F7258 /* PBDealCheckoutViewController.m */; };
 		60ED7E3217540A38001F7258 /* PBDealCheckoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E3017540A38001F7258 /* PBDealCheckoutViewController.xib */; };
+		60ED7E3417541983001F7258 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ED7E3317541983001F7258 /* QuartzCore.framework */; };
 		60F0AEFF17518FEC00CFCC21 /* PBDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AEFE17518FEC00CFCC21 /* PBDeal.m */; };
 		60F0AF021751912900CFCC21 /* PBDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AF011751912900CFCC21 /* PBDealView.m */; };
 		60F0AF041751913B00CFCC21 /* PBDealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F0AF031751913B00CFCC21 /* PBDealView.xib */; };
@@ -122,6 +123,7 @@
 		60ED7E2E17540A36001F7258 /* PBDealCheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealCheckoutViewController.h; sourceTree = "<group>"; };
 		60ED7E2F17540A37001F7258 /* PBDealCheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDealCheckoutViewController.m; sourceTree = "<group>"; };
 		60ED7E3017540A38001F7258 /* PBDealCheckoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBDealCheckoutViewController.xib; sourceTree = "<group>"; };
+		60ED7E3317541983001F7258 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60F0AEFD17518FEC00CFCC21 /* PBDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDeal.h; sourceTree = "<group>"; };
 		60F0AEFE17518FEC00CFCC21 /* PBDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDeal.m; sourceTree = "<group>"; };
 		60F0AF001751912800CFCC21 /* PBDealView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealView.h; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60ED7E3417541983001F7258 /* QuartzCore.framework in Frameworks */,
 				600DBF2C1718DD5F00F15020 /* UIKit.framework in Frameworks */,
 				600DBF2E1718DD5F00F15020 /* Foundation.framework in Frameworks */,
 				600DBF301718DD5F00F15020 /* CoreGraphics.framework in Frameworks */,
@@ -149,6 +152,7 @@
 		600DBF1F1718DD5F00F15020 = {
 			isa = PBXGroup;
 			children = (
+				60ED7E3317541983001F7258 /* QuartzCore.framework */,
 				6071F9911720FC8A008A1DAE /* Icon-s.png */,
 				6071F98F1720FC38008A1DAE /* Icon.png */,
 				600DBF311718DD5F00F15020 /* Stacker */,
