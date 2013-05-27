@@ -63,8 +63,48 @@
 }
 
 
++ (PBDealsRowView*) fbDealRow
+{
+    PBDealsRowView *dealsRow = [PBDealsRowView getViewFromNib];
+    dealsRow.frame = CGRectMake(0, 0, 320, 210);
+    
+    
+    CGRect dealsScrollViewFrame = dealsRow.dealsScrollView.frame;
+    dealsScrollViewFrame.size.width = 305;
+    dealsScrollViewFrame.size.height = 160;
+    dealsRow.dealsScrollView.frame = dealsScrollViewFrame;
+   
+    PBDeal *fbDeal = [PBDeal facebookConnectDeal];
+    
+    dealsRow.deals = @[fbDeal];
+    dealsRow.headerLabel.text = @"Special Offers";
+    
+    int count = 0;
+    CGFloat xOffset = 0;
+    PBDealView *dealView = [PBDealView dealViewForDeal:fbDeal target:dealsRow action:@selector(fbDealTapped:)];
+    dealView.button.tag = count++;
+    
+    CGRect dealViewFrame = dealView.frame;
+    dealViewFrame.origin.x = xOffset;
+    dealView.frame = dealViewFrame;
+    [dealsRow.dealsScrollView addSubview:dealView];
+    
+    xOffset += dealViewFrame.size.width + GAP_SIZE;
+    
+    dealsRow.dealsScrollView.contentSize = CGSizeMake(xOffset-GAP_SIZE, dealsRow.dealsScrollView.frame.size.height);
+    
+    return dealsRow;
+}
+
+
+
 - (void) dealTapped:(UIButton*)button
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowDealDetail" object:self.deals[button.tag]];
+}
+
+- (void) fbDealTapped:(UIButton*)button
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FacebookConnected" object:nil];
 }
 @end

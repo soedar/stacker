@@ -36,7 +36,13 @@
     [dealView.button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     dealView.nameLabel.text = deal.name;
-    dealView.costLabel.text = [NSString stringWithFormat:@"$%i", deal.cost];
+    if (deal.cost > 0) {
+        dealView.costLabel.text = [NSString stringWithFormat:@"$%i", deal.cost];
+    }
+    else {
+        dealView.costLabel.text = @"FREE ";
+    }
+    
     dealView.lifeLabel.text = [NSString stringWithFormat:@"x%i", deal.life];
     dealView.imageView.image = deal.image;
     

@@ -28,6 +28,7 @@
 		60834D78171E8868004943FA /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60834D76171E8868004943FA /* MenuViewController.xib */; };
 		60834D7A171E8D25004943FA /* yellow-coin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60834D79171E8D25004943FA /* yellow-coin@2x.png */; };
 		60834D7C171E9752004943FA /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 60834D7B171E9752004943FA /* lightbulb.png */; };
+		6089E7A217541FD20000AAD0 /* facebook-connect.png in Resources */ = {isa = PBXBuildFile; fileRef = 6089E7A117541FD20000AAD0 /* facebook-connect.png */; };
 		60ED7DD61751A07A001F7258 /* PBDealsRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED7DD51751A079001F7258 /* PBDealsRowView.m */; };
 		60ED7DD81751A091001F7258 /* PBDealsRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7DD71751A090001F7258 /* PBDealsRowView.xib */; };
 		60ED7DDC1751AD18001F7258 /* PBDealDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED7DDA1751AD17001F7258 /* PBDealDetailsViewController.m */; };
@@ -93,6 +94,7 @@
 		60834D76171E8868004943FA /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		60834D79171E8D25004943FA /* yellow-coin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow-coin@2x.png"; sourceTree = "<group>"; };
 		60834D7B171E9752004943FA /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
+		6089E7A117541FD20000AAD0 /* facebook-connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-connect.png"; sourceTree = "<group>"; };
 		60A6C5AB1719438600E2A1D3 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		60ED7DD41751A079001F7258 /* PBDealsRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealsRowView.h; sourceTree = "<group>"; };
 		60ED7DD51751A079001F7258 /* PBDealsRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDealsRowView.m; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		60ED7DDE1751B1BE001F7258 /* Deals */ = {
 			isa = PBXGroup;
 			children = (
+				6089E7A117541FD20000AAD0 /* facebook-connect.png */,
 				60ED7DE81751B1BE001F7258 /* PlaybulbDeals.plist */,
 				60ED7E031751B854001F7258 /* alexanders-steakhouse.png */,
 				60ED7E041751B854001F7258 /* amazon.png */,
@@ -367,6 +370,7 @@
 				60ED7E261753FC90001F7258 /* navy_blue@2X.png in Resources */,
 				60ED7E2817540489001F7258 /* navy_blue.png in Resources */,
 				60ED7E3217540A38001F7258 /* PBDealCheckoutViewController.xib in Resources */,
+				6089E7A217541FD20000AAD0 /* facebook-connect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

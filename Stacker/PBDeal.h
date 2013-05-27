@@ -20,5 +20,6 @@
 
 + (PBDeal*) testDeal;
 + (PBDeal*) testDeal2;
++ (PBDeal*) facebookConnectDeal;
 
 @end

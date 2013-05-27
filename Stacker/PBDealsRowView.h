@@ -11,5 +11,6 @@
 @interface PBDealsRowView : UIView
 
 + (PBDealsRowView*) dealsRowWithHeader:(NSString*)header deals:(NSArray*)deals;
++ (PBDealsRowView*) fbDealRow;
 
 @end

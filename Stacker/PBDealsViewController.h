@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PBDealsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface PBDealsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate>
 
 @end

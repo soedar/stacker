@@ -23,6 +23,17 @@
     return self;
 }
 
++ (PBDeal*) facebookConnectDeal
+{
+    NSDictionary *fbDict = @{@"Name": @"Connect your Facebook account",
+                             @"Life": @(5),
+                             @"Cost": @(0),
+                             @"Description": @"",
+                             @"ImageName": @"facebook-connect.png"};
+    
+    return [[PBDeal alloc] initWithDictionary:fbDict];
+}
+
 + (PBDeal*) testDeal
 {
     NSDictionary *testDict = @{@"Name": @"Apple iTunes X",

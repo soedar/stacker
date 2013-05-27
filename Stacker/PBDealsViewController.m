@@ -16,6 +16,8 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *dealsTableView;
 
+@property (nonatomic) BOOL hasFbConnect;
+
 @end
 
 @implementation PBDealsViewController
@@ -66,6 +68,7 @@
     if (self) {
         // Custom initialization
         self.title = @"PlayBulb";
+        self.hasFbConnect = NO;
     }
     return self;
 }
@@ -100,6 +103,7 @@
 - (void) registerNotification
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDeal:) name:@"ShowDealDetail" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showFbConnect:) name:@"FacebookConnected" object:nil];
 }
 
 - (void) showDeal:(NSNotification*) notification
@@ -111,6 +115,19 @@
     [self.navigationController pushViewController:dealDetailVc animated:YES];
 }
 
+- (void) showFbConnect:(NSNotification*) notification
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Facebook Connected!" message:@"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alertView show];
+    
+    self.hasFbConnect = YES;
+}
+
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self.dealsTableView reloadData];
+}
+
 - (void) dismissPlaybulbController
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -120,7 +137,13 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [PBDealsViewController categoryOrder].count;
+    if (!self.hasFbConnect) {
+        return 2;
+    }
+    
+    else {
+        return [PBDealsViewController categoryOrder].count;
+    }
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -137,10 +160,18 @@
     NSDictionary *dealsRows = [PBDealsViewController dealsRowsFromPlist];
     NSArray *categories = [PBDealsViewController categoryOrder];
     
-    NSString *category = categories[row];
+    PBDealsRowView *rowView = nil;
+    if (!self.hasFbConnect) {
+        if (row == 1) {
+            rowView = [PBDealsRowView fbDealRow];
+        }
+    }
     
-    PBDealsRowView *rowView = [PBDealsRowView dealsRowWithHeader:category
-                                                           deals:dealsRows[category]];
+    if (!rowView) {
+        NSString *category = categories[row];
+        rowView = [PBDealsRowView dealsRowWithHeader:category
+                                               deals:dealsRows[category]];
+    }
     
     [cell.contentView addSubview:rowView];
     
