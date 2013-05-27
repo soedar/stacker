@@ -105,6 +105,6 @@
 
 - (void) fbDealTapped:(UIButton*)button
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"FacebookConnected" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FacebookConnected" object:[PBDeal facebookConnectDeal]];
 }
 @end

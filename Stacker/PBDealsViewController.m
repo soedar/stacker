@@ -11,6 +11,7 @@
 #import "PBDeal.h"
 #import "PBDealsRowView.h"
 #import "PBDealDetailsViewController.h"
+#import "Constants.h"
 
 @interface PBDealsViewController ()
 
@@ -117,8 +118,11 @@
 
 - (void) showFbConnect:(NSNotification*) notification
 {
+    PBDeal *deal = notification.object;
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Facebook Connected!" message:@"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alertView show];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_ADD_COINS object:self userInfo:@{COINS_KEY: @(deal.life)}];
     
     self.hasFbConnect = YES;
 }
