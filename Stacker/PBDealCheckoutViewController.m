@@ -50,9 +50,8 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue.png"]];
     
     [self updateDealInformation];
-    
-    [self.checkoutTableView reloadData];
-    
+    [self addPurchaseButton];
+    [self setupTextFields];
     
     // Listen for keyboard appearances and disappearances
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -62,10 +61,10 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidHide:)
-                                                 name:UIKeyboardDidHideNotification
+                                                 name:UIKeyboardWillHideNotification
                                                object:nil];
     
-    [self addPurchaseButton];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,7 +98,12 @@
 
 - (void) purchaseItem
 {
+    NSArray *textFields = @[self.emailTextField, self.creditCardTextField, self.csvTextField, self.nameTextField, self.expiryTextField];
     
+    for (UITextField *textField in textFields) {
+        [textField resignFirstResponder];
+        [textField setEnabled:NO];
+    }
 }
 
 - (void) updateDealInformation
@@ -109,48 +113,53 @@
     self.descriptionNameLabel.text = self.deal.name;
 }
 
+- (void) setupTextFields
+{
+    self.emailTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 220, 30)];
+    self.emailTextField.placeholder = @"E-mail";
+    
+    self.creditCardTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 220, 30)];
+    self.creditCardTextField.placeholder = @"Credit Card";
+    
+    self.csvAndExpiryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+    self.expiryTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 180, 30)];
+    self.expiryTextField.placeholder = @"MMYY";
+    
+    self.csvTextField = [[UITextField alloc] initWithFrame:CGRectMake(200, 10, 50, 30)];
+    self.csvTextField.placeholder = @"CSV";
+    
+    [self.csvAndExpiryView addSubview:self.csvTextField];
+    [self.csvAndExpiryView addSubview:self.expiryTextField];
+    
+    
+    self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 220, 30)];
+    self.nameTextField.placeholder = @"Name";
+    
+    [self setDefaultValuesForTextField];
+}
+
+- (void) setDefaultValuesForTextField
+{
+    
+}
+
 - (UIView*) viewForIndexPath:(NSIndexPath*)indexPath
 {
     int row = indexPath.row;
     
     if (row == 0) {
-        if (!self.emailTextField) {
-            self.emailTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 185, 30)];
-            self.emailTextField.placeholder = @"E-mail";
-        }
         return self.emailTextField;
     }
 
     else if (row == 1) {
-        if (!self.creditCardTextField) {
-            self.creditCardTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 185, 30)];
-            self.creditCardTextField.placeholder = @"Credit Card";
-        }
         return self.creditCardTextField;
     }
 
     else if (row == 2) {
-        if (!self.csvAndExpiryView) {
-            self.csvAndExpiryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
-            self.expiryTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 180, 30)];
-            self.expiryTextField.placeholder = @"MMYY";
-            
-            self.csvTextField = [[UITextField alloc] initWithFrame:CGRectMake(200, 10, 50, 30)];
-            self.csvTextField.placeholder = @"CSV";
-            
-            [self.csvAndExpiryView addSubview:self.csvTextField];
-            [self.csvAndExpiryView addSubview:self.expiryTextField];
-            
-        }
-        
         return self.csvAndExpiryView;
     }
 
     else if (row == 3) {
-        if (!self.nameTextField) {
-            self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 185, 30)];
-            self.nameTextField.placeholder = @"Name";
-        }
         return self.nameTextField;
     }
 
