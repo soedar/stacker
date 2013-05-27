@@ -52,6 +52,8 @@
 		60ED7E241751B856001F7258 /* white-house-black-market.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E131751B856001F7258 /* white-house-black-market.png */; };
 		60ED7E261753FC90001F7258 /* navy_blue@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E251753FC90001F7258 /* navy_blue@2X.png */; };
 		60ED7E2817540489001F7258 /* navy_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E2717540488001F7258 /* navy_blue.png */; };
+		60ED7E3117540A38001F7258 /* PBDealCheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED7E2F17540A37001F7258 /* PBDealCheckoutViewController.m */; };
+		60ED7E3217540A38001F7258 /* PBDealCheckoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E3017540A38001F7258 /* PBDealCheckoutViewController.xib */; };
 		60F0AEFF17518FEC00CFCC21 /* PBDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AEFE17518FEC00CFCC21 /* PBDeal.m */; };
 		60F0AF021751912900CFCC21 /* PBDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AF011751912900CFCC21 /* PBDealView.m */; };
 		60F0AF041751913B00CFCC21 /* PBDealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F0AF031751913B00CFCC21 /* PBDealView.xib */; };
@@ -117,6 +119,9 @@
 		60ED7E131751B856001F7258 /* white-house-black-market.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-house-black-market.png"; sourceTree = "<group>"; };
 		60ED7E251753FC90001F7258 /* navy_blue@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navy_blue@2X.png"; sourceTree = "<group>"; };
 		60ED7E2717540488001F7258 /* navy_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navy_blue.png; sourceTree = "<group>"; };
+		60ED7E2E17540A36001F7258 /* PBDealCheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealCheckoutViewController.h; sourceTree = "<group>"; };
+		60ED7E2F17540A37001F7258 /* PBDealCheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDealCheckoutViewController.m; sourceTree = "<group>"; };
+		60ED7E3017540A38001F7258 /* PBDealCheckoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBDealCheckoutViewController.xib; sourceTree = "<group>"; };
 		60F0AEFD17518FEC00CFCC21 /* PBDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDeal.h; sourceTree = "<group>"; };
 		60F0AEFE17518FEC00CFCC21 /* PBDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDeal.m; sourceTree = "<group>"; };
 		60F0AF001751912800CFCC21 /* PBDealView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealView.h; sourceTree = "<group>"; };
@@ -230,6 +235,9 @@
 				60ED7DD91751AD17001F7258 /* PBDealDetailsViewController.h */,
 				60ED7DDA1751AD17001F7258 /* PBDealDetailsViewController.m */,
 				60ED7DDB1751AD18001F7258 /* PBDealDetailsViewController.xib */,
+				60ED7E2E17540A36001F7258 /* PBDealCheckoutViewController.h */,
+				60ED7E2F17540A37001F7258 /* PBDealCheckoutViewController.m */,
+				60ED7E3017540A38001F7258 /* PBDealCheckoutViewController.xib */,
 				60F0AF001751912800CFCC21 /* PBDealView.h */,
 				60F0AF011751912900CFCC21 /* PBDealView.m */,
 				60F0AF031751913B00CFCC21 /* PBDealView.xib */,
@@ -354,6 +362,7 @@
 				60ED7E241751B856001F7258 /* white-house-black-market.png in Resources */,
 				60ED7E261753FC90001F7258 /* navy_blue@2X.png in Resources */,
 				60ED7E2817540489001F7258 /* navy_blue.png in Resources */,
+				60ED7E3217540A38001F7258 /* PBDealCheckoutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +385,7 @@
 				60F0AF08175191D000CFCC21 /* PBDealsViewController.m in Sources */,
 				60ED7DD61751A07A001F7258 /* PBDealsRowView.m in Sources */,
 				60ED7DDC1751AD18001F7258 /* PBDealDetailsViewController.m in Sources */,
+				60ED7E3117540A38001F7258 /* PBDealCheckoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

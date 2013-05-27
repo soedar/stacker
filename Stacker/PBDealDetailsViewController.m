@@ -7,6 +7,7 @@
 //
 
 #import "PBDealDetailsViewController.h"
+#import "PBDealCheckoutViewController.h"
 
 #define CONTENT_PADDING     20;
 
@@ -76,7 +77,9 @@
 
 - (void)purchaseItem
 {
+    PBDealCheckoutViewController *checkoutVC = [[PBDealCheckoutViewController alloc] initWithDeal:self.deal];
     
+    [self.navigationController pushViewController:checkoutVC animated:YES];
 }
 
 #pragma mark - Sections of view

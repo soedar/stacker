@@ -40,7 +40,6 @@
     dealsScrollViewFrame.size.height = 160;
     dealsRow.dealsScrollView.frame = dealsScrollViewFrame;
     
-    
     dealsRow.deals = deals;
     dealsRow.headerLabel.text = header;
     
