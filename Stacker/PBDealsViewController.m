@@ -77,8 +77,7 @@
     [self addBackButton];
     [self registerNotification];
     
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue_.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue.png"]];
     
     [PBDealsViewController dealsRowsFromPlist];
 }
@@ -144,8 +143,6 @@
                                                            deals:dealsRows[category]];
     
     [cell.contentView addSubview:rowView];
-    
-    cell.backgroundColor = [UIColor greenColor];
     
     return cell;
 }

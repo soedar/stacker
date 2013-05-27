@@ -49,7 +49,7 @@
     self.scrollView.contentSize = self.contentView.frame.size;
     
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue_.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +97,6 @@
     frame.size.height = 197;
     imageView.frame = frame;
     
-    imageView.backgroundColor = [UIColor redColor];
     return imageView;
 }
 

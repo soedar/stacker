@@ -34,6 +34,13 @@
     PBDealsRowView *dealsRow = [PBDealsRowView getViewFromNib];
     dealsRow.frame = CGRectMake(0, 0, 320, 210);
     
+    
+    CGRect dealsScrollViewFrame = dealsRow.dealsScrollView.frame;
+    dealsScrollViewFrame.size.width = 305;
+    dealsScrollViewFrame.size.height = 160;
+    dealsRow.dealsScrollView.frame = dealsScrollViewFrame;
+    
+    
     dealsRow.deals = deals;
     dealsRow.headerLabel.text = header;
     
