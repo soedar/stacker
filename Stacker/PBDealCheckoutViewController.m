@@ -10,6 +10,7 @@
 
 @interface PBDealCheckoutViewController ()
 
+@property (nonatomic, weak) IBOutlet UIView *descriptionView;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *purchaseInfoLabel;
 
@@ -51,6 +52,20 @@
     [self updateDealInformation];
     
     [self.checkoutTableView reloadData];
+    
+    
+    // Listen for keyboard appearances and disappearances
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+    
+    [self addPurchaseButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +74,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) keyboardDidShow:(NSNotification*)notification
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.descriptionView.transform = CGAffineTransformMakeTranslation(0, -80);
+        self.checkoutTableView.transform = CGAffineTransformMakeTranslation(0, -80);
+    }];
+}
+
+- (void) keyboardDidHide:(NSNotification*)notification
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.descriptionView.transform = CGAffineTransformIdentity;
+        self.checkoutTableView.transform = CGAffineTransformIdentity;
+    }];
+}
+
+- (void) addPurchaseButton
+{
+    NSString *costTitle = [NSString stringWithFormat:@"Checkout"];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:costTitle style:UIBarButtonItemStyleBordered target:self action:@selector(purchaseItem)];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+}
+
+- (void) purchaseItem
+{
+    
+}
 
 - (void) updateDealInformation
 {
