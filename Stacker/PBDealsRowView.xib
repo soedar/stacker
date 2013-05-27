@@ -39,7 +39,7 @@
 					<object class="IBUIScrollView" id="356404449">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 30}, {320, 160}}</string>
+						<string key="NSFrame">{{15, 30}, {305, 160}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="535506811"/>

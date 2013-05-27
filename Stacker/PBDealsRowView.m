@@ -32,7 +32,7 @@
 + (PBDealsRowView*) dealsRowWithHeader:(NSString *)header deals:(NSArray *)deals
 {
     PBDealsRowView *dealsRow = [PBDealsRowView getViewFromNib];
-    dealsRow.frame = CGRectMake(0, 0, 320, 200);
+    dealsRow.frame = CGRectMake(0, 0, 320, 210);
     
     dealsRow.deals = deals;
     dealsRow.headerLabel.text = header;

@@ -142,6 +142,8 @@
     
     [cell.contentView addSubview:rowView];
     
+    cell.backgroundColor = [UIColor greenColor];
+    
     return cell;
 }
 
