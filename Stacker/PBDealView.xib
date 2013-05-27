@@ -75,12 +75,14 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">2</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="186215261">
-									<int key="type">1</int>
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="1059061477">
+									<string key="name">HelveticaNeue-Light</string>
+									<string key="family">Helvetica Neue</string>
+									<int key="traits">0</int>
 									<double key="pointSize">17</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="605521113">
-									<string key="NSName">Helvetica</string>
+								<object class="NSFont" key="IBUIFont" id="599634743">
+									<string key="NSName">HelveticaNeue-Medium</string>
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
 								</object>
@@ -122,8 +124,8 @@
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="186215261"/>
-								<reference key="IBUIFont" ref="605521113"/>
+								<reference key="IBUIFontDescription" ref="1059061477"/>
+								<reference key="IBUIFont" ref="599634743"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
@@ -163,8 +165,8 @@
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="186215261"/>
-								<reference key="IBUIFont" ref="605521113"/>
+								<reference key="IBUIFontDescription" ref="1059061477"/>
+								<reference key="IBUIFont" ref="599634743"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>

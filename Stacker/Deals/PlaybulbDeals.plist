@@ -31,7 +31,7 @@
 			<key>Cost</key>
 			<integer>10</integer>
 			<key>Description</key>
-			<string>On purchase, an Amazon Gift Card will be sent to your email which can be used to purchase anything from amazon.com. Amazon.com is the world&apos;s largest online retailer of books, movies, music and games along with electronics, toys, apparel, sports, tools, groceries and general home and garden items. </string>
+			<string>On purchase, an Amazon Gift Card will be sent to your email which can be used to purchase anything from amazon.com. Amazon.com is the world&apos;s largest online retailer of books, movies, music and games.</string>
 			<key>ImageName</key>
 			<string>amazon.png</string>
 		</dict>
@@ -224,7 +224,7 @@
 			<key>Cost</key>
 			<integer>31</integer>
 			<key>Description</key>
-			<string>Beauty Fusion Studio is a full service salon with over 20 years of experience in the bay area. Relax in a friendly and cozy atmosphere where you can enjoy being pampered and experience a total makeover from our beauty express. We guarantee that you will be delighted to have come to the right place.</string>
+			<string>Beauty Fusion Studio is a full service salon with over 20 years of experience in the bay area. Relax in a friendly and cozy atmosphere where you can enjoy being pampered and experience a total makeover from our beauty express.</string>
 			<key>ImageName</key>
 			<string>beauty-fusion-salon.png</string>
 			<key>Category</key>
