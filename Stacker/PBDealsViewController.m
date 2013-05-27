@@ -77,6 +77,9 @@
     [self addBackButton];
     [self registerNotification];
     
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue_.png"]];
+    
     [PBDealsViewController dealsRowsFromPlist];
 }
 

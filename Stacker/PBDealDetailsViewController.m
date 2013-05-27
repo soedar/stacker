@@ -17,7 +17,6 @@
 @property (nonatomic, weak) IBOutlet UIView *descriptionView;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 
-@property (nonatomic, weak) IBOutlet UIView *purchaseInfoView;
 @property (nonatomic, weak) IBOutlet UILabel *purchaseInfoLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionNameLabel;
 
@@ -30,7 +29,6 @@
     self = [super init];
     if (self) {
         _deal = deal;
-        self.title = deal.name;
         self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
     }
     
@@ -45,11 +43,13 @@
     [self addPurchaseButton];
     
     [self appendViewToContentView:[self viewForImage]];
-    [self appendViewToContentView:[self viewForPurchaseInfo]];
     [self appendViewToContentView:[self viewForDescription]];
     
     [self.scrollView addSubview:self.contentView];
     self.scrollView.contentSize = self.contentView.frame.size;
+    
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue_.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,15 +101,10 @@
     return imageView;
 }
 
-- (UIView*) viewForPurchaseInfo
+- (UIView*) viewForDescription
 {
     self.purchaseInfoLabel.text = [NSString stringWithFormat:@"Buy this for $%i and get %i x ", self.deal.cost, self.deal.life];
     
-    return self.purchaseInfoView;
-}
-
-- (UIView*) viewForDescription
-{
     self.descriptionNameLabel.text = self.deal.name;
     self.descriptionLabel.text = self.deal.dealDescription;
     [self.descriptionLabel sizeToFit];

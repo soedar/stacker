@@ -50,6 +50,7 @@
 		60ED7E221751B856001F7258 /* tarragon-restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E111751B855001F7258 /* tarragon-restaurant.png */; };
 		60ED7E231751B856001F7258 /* urban-darling.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E121751B856001F7258 /* urban-darling.png */; };
 		60ED7E241751B856001F7258 /* white-house-black-market.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E131751B856001F7258 /* white-house-black-market.png */; };
+		60ED7E261753FC90001F7258 /* navy_blue_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED7E251753FC90001F7258 /* navy_blue_@2X.png */; };
 		60F0AEFF17518FEC00CFCC21 /* PBDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AEFE17518FEC00CFCC21 /* PBDeal.m */; };
 		60F0AF021751912900CFCC21 /* PBDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F0AF011751912900CFCC21 /* PBDealView.m */; };
 		60F0AF041751913B00CFCC21 /* PBDealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F0AF031751913B00CFCC21 /* PBDealView.xib */; };
@@ -113,6 +114,7 @@
 		60ED7E111751B855001F7258 /* tarragon-restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tarragon-restaurant.png"; sourceTree = "<group>"; };
 		60ED7E121751B856001F7258 /* urban-darling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "urban-darling.png"; sourceTree = "<group>"; };
 		60ED7E131751B856001F7258 /* white-house-black-market.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-house-black-market.png"; sourceTree = "<group>"; };
+		60ED7E251753FC90001F7258 /* navy_blue_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navy_blue_@2X.png"; sourceTree = "<group>"; };
 		60F0AEFD17518FEC00CFCC21 /* PBDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDeal.h; sourceTree = "<group>"; };
 		60F0AEFE17518FEC00CFCC21 /* PBDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDeal.m; sourceTree = "<group>"; };
 		60F0AF001751912800CFCC21 /* PBDealView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDealView.h; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		600DBF311718DD5F00F15020 /* Stacker */ = {
 			isa = PBXGroup;
 			children = (
+				60ED7E251753FC90001F7258 /* navy_blue_@2X.png */,
 				60834D7B171E9752004943FA /* lightbulb.png */,
 				60834D79171E8D25004943FA /* yellow-coin@2x.png */,
 				60834D82171E9C2A004943FA /* Playmon */,
@@ -346,6 +349,7 @@
 				60ED7E221751B856001F7258 /* tarragon-restaurant.png in Resources */,
 				60ED7E231751B856001F7258 /* urban-darling.png in Resources */,
 				60ED7E241751B856001F7258 /* white-house-black-market.png in Resources */,
+				60ED7E261753FC90001F7258 /* navy_blue_@2X.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
