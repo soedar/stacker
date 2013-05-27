@@ -19,10 +19,7 @@
 
 @property (nonatomic, weak) IBOutlet UIView *purchaseInfoView;
 @property (nonatomic, weak) IBOutlet UILabel *purchaseInfoLabel;
-
-@property (nonatomic, weak) IBOutlet UIView *purchaseButtonView;
-@property (nonatomic, weak) IBOutlet UIButton *purchaseButton;
-
+@property (nonatomic, weak) IBOutlet UILabel *descriptionNameLabel;
 
 @end
 
@@ -44,8 +41,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+   
+    [self addPurchaseButton];
     
-    [self appendViewToContentView:[self viewForPurchaseButton]];
     [self appendViewToContentView:[self viewForImage]];
     [self appendViewToContentView:[self viewForPurchaseInfo]];
     [self appendViewToContentView:[self viewForDescription]];
@@ -65,7 +63,7 @@
     CGRect viewFrame = view.frame;
     CGRect contentFrame = self.contentView.frame;
     
-    viewFrame.origin.y = contentFrame.size.height + CONTENT_PADDING;
+    viewFrame.origin.y = contentFrame.size.height;
     view.frame = viewFrame;
     
     contentFrame.size.height += view.frame.size.height + CONTENT_PADDING;
@@ -74,34 +72,45 @@
     [self.contentView addSubview:view];
 }
 
+#pragma mark - Purchase
+
+- (void)purchaseItem
+{
+    
+}
+
 #pragma mark - Sections of view
+
+- (void) addPurchaseButton
+{
+    NSString *costTitle = [NSString stringWithFormat:@"$%i", self.deal.cost];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:costTitle style:UIBarButtonItemStyleBordered target:self action:@selector(purchaseItem)];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+}
 
 - (UIView *) viewForImage
 {
     UIImageView *imageView = [[UIImageView alloc] initWithImage:self.deal.image];
-    imageView.center = CGPointMake(160, imageView.center.x);
+    
+    CGRect frame = imageView.frame;
+    frame.size.width = 320;
+    frame.size.height = 197;
+    imageView.frame = frame;
     
     imageView.backgroundColor = [UIColor redColor];
     return imageView;
 }
 
-- (UIView *) viewForPurchaseButton
-{
-    NSString *buttonTitle = [NSString stringWithFormat:@"$%i", self.deal.cost];
-    [self.purchaseButton setTitle:buttonTitle forState:UIControlStateNormal];
-    
-    return self.purchaseButtonView;
-}
-
 - (UIView*) viewForPurchaseInfo
 {
-    self.purchaseInfoLabel.text = [NSString stringWithFormat:@"Purchase this for $%i and get %i x ", self.deal.cost, self.deal.life];
+    self.purchaseInfoLabel.text = [NSString stringWithFormat:@"Buy this for $%i and get %i x ", self.deal.cost, self.deal.life];
     
     return self.purchaseInfoView;
 }
 
 - (UIView*) viewForDescription
 {
+    self.descriptionNameLabel.text = self.deal.name;
     self.descriptionLabel.text = self.deal.dealDescription;
     [self.descriptionLabel sizeToFit];
     
