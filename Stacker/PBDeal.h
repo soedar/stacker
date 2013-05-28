@@ -17,6 +17,7 @@
 @property (nonatomic, strong, readonly) UIImage *image;
 
 - (PBDeal*) initWithDictionary:(NSDictionary*)dealDictionary;
+- (NSString*) generateCardCode;
 
 + (PBDeal*) testDeal;
 + (PBDeal*) testDeal2;

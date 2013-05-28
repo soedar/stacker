@@ -23,6 +23,23 @@
     return self;
 }
 
+- (NSString *)generateCardCode
+{
+    NSMutableString *cardCode = [NSMutableString string];
+    for (int i=0;i<3;i++) {
+        [cardCode appendFormat:@"%i", [self random4DigitNumber]];
+        if (i < 2) {
+            [cardCode appendString:@"-"];
+        }
+    }
+    return cardCode;
+}
+
+- (int) random4DigitNumber
+{
+    return (int) (arc4random() % 9000) + 1000;
+}
+
 + (PBDeal*) facebookConnectDeal
 {
     NSDictionary *fbDict = @{@"Name": @"Connect your Facebook account",

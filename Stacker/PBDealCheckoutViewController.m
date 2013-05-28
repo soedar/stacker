@@ -8,6 +8,9 @@
 
 #import "PBDealCheckoutViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AFNetworking.h"
+#import "Constants.h"
+#import "MBProgressHUD.h"
 
 @interface PBDealCheckoutViewController ()
 
@@ -104,6 +107,53 @@
         [textField resignFirstResponder];
         [textField setEnabled:NO];
     }
+    
+    NSString *name = (self.nameTextField.text) ? self.nameTextField.text : @"Playbulb User";
+    
+    NSString *title = [NSString stringWithFormat:@"Redemption code for %@", self.deal.name];
+    NSString *content = [NSString stringWithFormat:@"Dear %@,\n\nThank you for your recent purchase of %@ on the Playbulb Platform.\n\nHere is your redemption code: %@.\n\nWarmest Regards,\nTeam Playbulb",
+                         name,
+                         self.deal.name,
+                         [self.deal generateCardCode]
+                         ];
+    
+    if (self.emailTextField.text == nil || [self.emailTextField.text isEqualToString:@""]) {
+        [self showPurchaseCompleteAlert];
+    }
+    
+    else {
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://johngoh.org/"]];
+        NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"
+                                                                path:@"http://johngoh.org/playbulb/email.php"
+                                                          parameters:@{@"to": self.emailTextField.text,
+                                        @"subject": title, @"message": content}];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [httpClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self showPurchaseCompleteAlert];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self showPurchaseCompleteAlert];
+        }];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Performing Transactions...";
+        [operation start];
+    }
+}
+
+- (void) showPurchaseCompleteAlert
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you!" message:@"You will receive an email shortly with redemption instructions" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alertView show];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_ADD_COINS object:self userInfo:@{COINS_KEY: @(self.deal.life)}];
+}
+
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)resignTextFieldResponders:(id)sender

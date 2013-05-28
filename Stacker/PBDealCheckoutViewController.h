@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PBDeal.h"
 
-@interface PBDealCheckoutViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface PBDealCheckoutViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) PBDeal *deal;
 
