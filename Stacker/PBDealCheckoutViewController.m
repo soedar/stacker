@@ -176,30 +176,55 @@
 {
     self.emailTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 220, 30)];
     self.emailTextField.placeholder = @"E-mail";
+    self.emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
     
     self.creditCardTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 220, 30)];
     self.creditCardTextField.placeholder = @"Credit Card";
+    self.creditCardTextField.keyboardType = UIKeyboardTypeNumberPad;
     
     self.csvAndExpiryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
     self.expiryTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 180, 30)];
     self.expiryTextField.placeholder = @"MMYY";
+    self.expiryTextField.keyboardType = UIKeyboardTypeNumberPad;
     
     self.csvTextField = [[UITextField alloc] initWithFrame:CGRectMake(200, 10, 50, 30)];
     self.csvTextField.placeholder = @"CSV";
+    self.csvTextField.keyboardType = UIKeyboardTypeNumberPad;
     
     [self.csvAndExpiryView addSubview:self.csvTextField];
     [self.csvAndExpiryView addSubview:self.expiryTextField];
     
-    
     self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 220, 30)];
     self.nameTextField.placeholder = @"Name";
+    
+    
+    NSArray *textFields = @[self.emailTextField, self.creditCardTextField, self.csvTextField, self.nameTextField, self.expiryTextField];
+    
+    for (UITextField *textField in textFields) {
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.delegate = self;
+    }
+    
+    
     
     [self setDefaultValuesForTextField];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+
 - (void) setDefaultValuesForTextField
 {
-    
+    self.nameTextField.text = @"Soedar";
+    self.emailTextField.text = @"soedar.sg@gmail.com";
+    self.creditCardTextField.text = @"378282246310005";
+    self.expiryTextField.text = @"04/15";
+    self.csvTextField.text = @"243";
 }
 
 - (UIView*) viewForIndexPath:(NSIndexPath*)indexPath
