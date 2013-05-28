@@ -17,9 +17,9 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *dealsTableView;
 
-@property (nonatomic) BOOL hasFbConnect;
-
 @end
+
+static BOOL hasFbConnect = NO;
 
 @implementation PBDealsViewController
 
@@ -69,7 +69,6 @@
     if (self) {
         // Custom initialization
         self.title = @"PlayBulb";
-        self.hasFbConnect = NO;
     }
     return self;
 }
@@ -84,6 +83,10 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navy_blue.png"]];
     
     [PBDealsViewController dealsRowsFromPlist];
+    
+    if (hasFbConnect) {
+        [self addLogoutButton];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,11 +127,25 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_ADD_COINS object:self userInfo:@{COINS_KEY: @(deal.life)}];
     
-    self.hasFbConnect = YES;
+    hasFbConnect = YES;
+}
+
+- (void) addLogoutButton
+{
+    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutFacebook)];
+    self.navigationItem.rightBarButtonItem = logoutButton;
+}
+
+- (void) logoutFacebook
+{
+    hasFbConnect = NO;
+    self.navigationItem.rightBarButtonItem = nil;
+    [self.dealsTableView reloadData];
 }
 
 - (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
+    [self addLogoutButton];
     [self.dealsTableView reloadData];
 }
 
@@ -141,7 +158,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (!self.hasFbConnect) {
+    if (!hasFbConnect) {
         return 2;
     }
     
@@ -165,7 +182,7 @@
     NSArray *categories = [PBDealsViewController categoryOrder];
     
     PBDealsRowView *rowView = nil;
-    if (!self.hasFbConnect) {
+    if (!hasFbConnect) {
         if (row == 1) {
             rowView = [PBDealsRowView fbDealRow];
         }
