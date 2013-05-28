@@ -11,7 +11,7 @@
 
 #define BOX_SIZE_IPHONE         30
 #define COLUMN_COUNT            7
-#define INITIAL_COINS           3
+#define INITIAL_COINS           2
 
 #define BACKGROUND_COLOR        [UIColor colorWithRed:241/255.0 green:239/255.0 blue:165/255.0 alpha:1.0]
 #define TEXT_COLOR              [UIColor colorWithRed:85/255.0 green:66/255.0 blue:54/255.0 alpha:1.0]

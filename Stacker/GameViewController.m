@@ -126,7 +126,7 @@
     
     switch (buttonIndex) {
         case 1:
-            [iapAlert show];
+            //[iapAlert show];
             break;
         case 2:
             [self showPlaymonController];
